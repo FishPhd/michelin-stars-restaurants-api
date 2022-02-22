@@ -1,0 +1,28 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+generator typegraphql {
+  provider = "typegraphql-prisma"
+  output   = "./generated/type-graphql"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model restaurants {
+  id       BigInt  @id
+  name     String?
+  rating   BigInt?
+  guide    String?
+  img      String?
+  link     String?
+  location String?
+  type     String?
+  lat      Float?
+  long     Float?
+
+  @@index([id], map: "ix_restaurants_id")
+}
