@@ -1,9 +1,8 @@
 import React, { useEffect } from "react";
 
-const styles = require("../styles/google-maps.json");
 import { withUrqlClient } from "next-urql";
 import { useFindManyRestaurantsQuery } from "../graphql/generated/graphql";
-import { GoogleMap } from "../component/google-map";
+import { GoogleMap } from "../components/google-map";
 
 export const Home: React.FC = () => {
   const { data: { findManyRestaurants: restaurants } = {} } =
