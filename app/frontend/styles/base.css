@@ -2,23 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-/* body > #__next > .container {
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
-body.is-map > #__next > .navbar {
-  display: none;
-}
-
-body.is-map > #__next > .container {
-  width: 100%;
-  max-width: 100%;
-  padding: 0 !important;
-} */
+/* Google Map */
 
 #google-map {
   position: fixed !important;
   height: 100% !important;
   width: 100% !important;
+}
+
+.gm-style-iw,
+button:focus {
+  outline: 0;
+}
+
+.gm-style-iw-a,
+div:focus {
+  outline: 0;
 }

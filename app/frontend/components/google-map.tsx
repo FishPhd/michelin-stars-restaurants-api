@@ -52,9 +52,9 @@ export class GoogleMap extends React.Component<MapProps> {
       marker.addListener("click", () => {
         infoWindow.setContent(
           "<div class='infowindow-container'>" +
-            "<img src='" +
+            "<img class='pt-2' src='" +
             r.img +
-            "?width=200&height=200'></img><div class='inner'><h4 class='text-xl	font-bold'>" +
+            "?width=200&height=200'></img><div class='inner'><h4 class='text-xl pt-2 font-bold'>" +
             label +
             "</h4><p class='text-xl	text-red-800'>" +
             "&#x273C".repeat(r.rating) +
@@ -68,6 +68,8 @@ export class GoogleMap extends React.Component<MapProps> {
       return marker;
     });
     this.clusterer = new MarkerClusterer(this.map, [], {
+      gridSize: 30,
+      minimumClusterSize: 4,
       imagePath:
         "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m",
     });
