@@ -8,7 +8,7 @@ class AppDocument extends Document {
           <meta charSet="UTF-8" />
           <meta content="ie=edge" httpEquiv="X-UA-Compatible" />
           <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
-          <meta name="application-name" content="Michellin Star Map" />
+          <meta name="application-name" content="Michelin Star Map" />
           {/* <link rel="manifest" href="/manifest.json" /> */}
           <link rel="styles" href="/styles.json" />
 

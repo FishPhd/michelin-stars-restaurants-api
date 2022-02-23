@@ -8,7 +8,7 @@ from glob2 import glob
 def scrape_website():
     output_name = f"restaurants{round(time.time())}.csv"
 
-    # Scrape Michellin guide website
+    # Scrape Michelin guide website
     scraper_instance = Scraper()
     scraper_instance.scrape()
 

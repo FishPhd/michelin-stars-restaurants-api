@@ -56,7 +56,7 @@ class Scraper:
 
         print("Scraping:", self.url)
 
-        # Scrape Michellin "cards"
+        # Scrape Michelin "cards"
         for card in cards:
             rating_tag = card.select_one(selectors['rating']).get_text()
             rating = ratings_map[rating_tag]
