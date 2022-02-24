@@ -1,18 +1,19 @@
-import React, { useEffect } from "react";
-
-import { withUrqlClient } from "next-urql";
-import { useFindManyRestaurantsQuery } from "../graphql/generated/graphql";
+import { DocumentNode } from "graphql";
+import React from "react";
 import { GoogleMap } from "../components/google-map";
+import {
+  FindManyRestaurantsDocument,
+  useFindManyRestaurantsQuery,
+} from "../graphql/generated/graphql";
+import { client, ssrCache } from "../utils/withUrql";
 
-export const Home: React.FC = () => {
+export default function Home() {
   const { data: { findManyRestaurants: restaurants } = {} } =
     useFindManyRestaurantsQuery()[0];
-  return <GoogleMap restaurants={restaurants}></GoogleMap>;
-};
+  return <GoogleMap restaurants={restaurants}></GoogleMap>; //restaurants={data}
+}
 
-export default withUrqlClient(
-  () => ({
-    url: "http://localhost:4000/graphql",
-  }),
-  { ssr: true }
-)(Home);
+export async function getServerSideProps(ctx) {
+  await client.query(FindManyRestaurantsDocument as DocumentNode).toPromise();
+  return { props: { urqlState: ssrCache.extractData() } };
+}
