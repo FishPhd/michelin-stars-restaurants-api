@@ -8,8 +8,7 @@
     "migrate": "prisma migrate dev --name init",
     "pull": "prisma db pull",
     "gen": "prisma generate",
-    "lint": "eslint . --ext .ts --fix",
-    "prettier:fix": "prettier --write prisma/**/*.ts"
+    "lint": "eslint . --ext .ts --fix"
   },
   "license": "MIT",
   "dependencies": {
