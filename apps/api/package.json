@@ -7,7 +7,7 @@
     "dev": "tsnd --respawn dist/index.js",
     "migrate": "prisma migrate dev --name init",
     "pull": "prisma db pull",
-    "gen": "prisma generate",
+    "gen": "prisma generate && prettier --write prisma/**/*.ts",
     "lint": "eslint . --ext .ts --fix",
     "prettier": "prettier --write prisma/**/*.ts"
   },
