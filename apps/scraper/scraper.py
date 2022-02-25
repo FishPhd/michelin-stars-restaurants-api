@@ -1,7 +1,10 @@
+import time
+from datetime import date
+
 import requests
 from bs4 import BeautifulSoup as bs
+
 from restaurant import Restaurant
-import time
 
 base_url = 'https://guide.michelin.com/'
 query = 'en/restaurants/3-stars-michelin/2-stars-michelin/1-star-michelin/page/'
@@ -29,6 +32,7 @@ class Scraper:
         self.content = bs(requests.get(self.url).content, 'html.parser')
         self.delay_rate = 0.15
         self.total_pages = self.get_total_pages(self.content)
+        self.cur_year = date.today().year
 
     def get_restaurants(self):
         return self.restaurants
@@ -80,7 +84,8 @@ class Scraper:
             long = card.attrs["data-lng"]
 
             cur_restaurant = Restaurant(name, rating, guide, img, link,
-                                        location, cuisine_type, lat, long)
+                                        location, cuisine_type, lat, long,
+                                        self.cur_year)
             self.restaurants.append(cur_restaurant)
 
         # Add delay to avoid timeouts
