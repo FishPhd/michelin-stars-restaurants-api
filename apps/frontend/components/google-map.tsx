@@ -57,7 +57,7 @@ export class GoogleMap extends React.Component<MapProps> {
             "?width=200&height=200'></img><div class='inner'><h4 class='text-xl pt-2 font-bold'>" +
             label +
             "</h4><p class='text-xl	text-red-800'>" +
-            "&#x273C".repeat(r.rating) +
+            "&#x273D".repeat(r.rating) +
             "</p><p>Cuisine: " +
             r.type +
             "</p></div></div>"
