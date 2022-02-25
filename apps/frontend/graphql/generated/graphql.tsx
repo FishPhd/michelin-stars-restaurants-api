@@ -1,10 +1,17 @@
-import gql from 'graphql-tag';
-import * as Urql from 'urql';
+import { DocumentNode } from "graphql";
+import gql from "graphql-tag";
+import * as Urql from "urql";
 export type Maybe<T> = T | null;
 export type InputMaybe<T> = Maybe<T>;
-export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
-export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: Maybe<T[SubKey]> };
-export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> };
+export type Exact<T extends { [key: string]: unknown }> = {
+  [K in keyof T]: T[K];
+};
+export type MakeOptional<T, K extends keyof T> = Omit<T, K> & {
+  [SubKey in K]?: Maybe<T[SubKey]>;
+};
+export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & {
+  [SubKey in K]: Maybe<T[SubKey]>;
+};
 export type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
@@ -18,12 +25,12 @@ export type Scalars = {
 };
 
 export type AffectedRowsOutput = {
-  __typename?: 'AffectedRowsOutput';
-  count: Scalars['Int'];
+  __typename?: "AffectedRowsOutput";
+  count: Scalars["Int"];
 };
 
 export type AggregateRestaurants = {
-  __typename?: 'AggregateRestaurants';
+  __typename?: "AggregateRestaurants";
   _avg?: Maybe<RestaurantsAvgAggregate>;
   _count?: Maybe<RestaurantsCountAggregate>;
   _max?: Maybe<RestaurantsMaxAggregate>;
@@ -32,33 +39,33 @@ export type AggregateRestaurants = {
 };
 
 export type BigIntFieldUpdateOperationsInput = {
-  decrement?: InputMaybe<Scalars['BigInt']>;
-  divide?: InputMaybe<Scalars['BigInt']>;
-  increment?: InputMaybe<Scalars['BigInt']>;
-  multiply?: InputMaybe<Scalars['BigInt']>;
-  set?: InputMaybe<Scalars['BigInt']>;
+  decrement?: InputMaybe<Scalars["BigInt"]>;
+  divide?: InputMaybe<Scalars["BigInt"]>;
+  increment?: InputMaybe<Scalars["BigInt"]>;
+  multiply?: InputMaybe<Scalars["BigInt"]>;
+  set?: InputMaybe<Scalars["BigInt"]>;
 };
 
 export type BigIntFilter = {
-  equals?: InputMaybe<Scalars['BigInt']>;
-  gt?: InputMaybe<Scalars['BigInt']>;
-  gte?: InputMaybe<Scalars['BigInt']>;
-  in?: InputMaybe<Array<Scalars['BigInt']>>;
-  lt?: InputMaybe<Scalars['BigInt']>;
-  lte?: InputMaybe<Scalars['BigInt']>;
+  equals?: InputMaybe<Scalars["BigInt"]>;
+  gt?: InputMaybe<Scalars["BigInt"]>;
+  gte?: InputMaybe<Scalars["BigInt"]>;
+  in?: InputMaybe<Array<Scalars["BigInt"]>>;
+  lt?: InputMaybe<Scalars["BigInt"]>;
+  lte?: InputMaybe<Scalars["BigInt"]>;
   not?: InputMaybe<NestedBigIntFilter>;
-  notIn?: InputMaybe<Array<Scalars['BigInt']>>;
+  notIn?: InputMaybe<Array<Scalars["BigInt"]>>;
 };
 
 export type BigIntNullableFilter = {
-  equals?: InputMaybe<Scalars['BigInt']>;
-  gt?: InputMaybe<Scalars['BigInt']>;
-  gte?: InputMaybe<Scalars['BigInt']>;
-  in?: InputMaybe<Array<Scalars['BigInt']>>;
-  lt?: InputMaybe<Scalars['BigInt']>;
-  lte?: InputMaybe<Scalars['BigInt']>;
+  equals?: InputMaybe<Scalars["BigInt"]>;
+  gt?: InputMaybe<Scalars["BigInt"]>;
+  gte?: InputMaybe<Scalars["BigInt"]>;
+  in?: InputMaybe<Array<Scalars["BigInt"]>>;
+  lt?: InputMaybe<Scalars["BigInt"]>;
+  lte?: InputMaybe<Scalars["BigInt"]>;
   not?: InputMaybe<NestedBigIntNullableFilter>;
-  notIn?: InputMaybe<Array<Scalars['BigInt']>>;
+  notIn?: InputMaybe<Array<Scalars["BigInt"]>>;
 };
 
 export type BigIntNullableWithAggregatesFilter = {
@@ -67,14 +74,14 @@ export type BigIntNullableWithAggregatesFilter = {
   _max?: InputMaybe<NestedBigIntNullableFilter>;
   _min?: InputMaybe<NestedBigIntNullableFilter>;
   _sum?: InputMaybe<NestedBigIntNullableFilter>;
-  equals?: InputMaybe<Scalars['BigInt']>;
-  gt?: InputMaybe<Scalars['BigInt']>;
-  gte?: InputMaybe<Scalars['BigInt']>;
-  in?: InputMaybe<Array<Scalars['BigInt']>>;
-  lt?: InputMaybe<Scalars['BigInt']>;
-  lte?: InputMaybe<Scalars['BigInt']>;
+  equals?: InputMaybe<Scalars["BigInt"]>;
+  gt?: InputMaybe<Scalars["BigInt"]>;
+  gte?: InputMaybe<Scalars["BigInt"]>;
+  in?: InputMaybe<Array<Scalars["BigInt"]>>;
+  lt?: InputMaybe<Scalars["BigInt"]>;
+  lte?: InputMaybe<Scalars["BigInt"]>;
   not?: InputMaybe<NestedBigIntNullableWithAggregatesFilter>;
-  notIn?: InputMaybe<Array<Scalars['BigInt']>>;
+  notIn?: InputMaybe<Array<Scalars["BigInt"]>>;
 };
 
 export type BigIntWithAggregatesFilter = {
@@ -83,25 +90,25 @@ export type BigIntWithAggregatesFilter = {
   _max?: InputMaybe<NestedBigIntFilter>;
   _min?: InputMaybe<NestedBigIntFilter>;
   _sum?: InputMaybe<NestedBigIntFilter>;
-  equals?: InputMaybe<Scalars['BigInt']>;
-  gt?: InputMaybe<Scalars['BigInt']>;
-  gte?: InputMaybe<Scalars['BigInt']>;
-  in?: InputMaybe<Array<Scalars['BigInt']>>;
-  lt?: InputMaybe<Scalars['BigInt']>;
-  lte?: InputMaybe<Scalars['BigInt']>;
+  equals?: InputMaybe<Scalars["BigInt"]>;
+  gt?: InputMaybe<Scalars["BigInt"]>;
+  gte?: InputMaybe<Scalars["BigInt"]>;
+  in?: InputMaybe<Array<Scalars["BigInt"]>>;
+  lt?: InputMaybe<Scalars["BigInt"]>;
+  lte?: InputMaybe<Scalars["BigInt"]>;
   not?: InputMaybe<NestedBigIntWithAggregatesFilter>;
-  notIn?: InputMaybe<Array<Scalars['BigInt']>>;
+  notIn?: InputMaybe<Array<Scalars["BigInt"]>>;
 };
 
 export type FloatNullableFilter = {
-  equals?: InputMaybe<Scalars['Float']>;
-  gt?: InputMaybe<Scalars['Float']>;
-  gte?: InputMaybe<Scalars['Float']>;
-  in?: InputMaybe<Array<Scalars['Float']>>;
-  lt?: InputMaybe<Scalars['Float']>;
-  lte?: InputMaybe<Scalars['Float']>;
+  equals?: InputMaybe<Scalars["Float"]>;
+  gt?: InputMaybe<Scalars["Float"]>;
+  gte?: InputMaybe<Scalars["Float"]>;
+  in?: InputMaybe<Array<Scalars["Float"]>>;
+  lt?: InputMaybe<Scalars["Float"]>;
+  lte?: InputMaybe<Scalars["Float"]>;
   not?: InputMaybe<NestedFloatNullableFilter>;
-  notIn?: InputMaybe<Array<Scalars['Float']>>;
+  notIn?: InputMaybe<Array<Scalars["Float"]>>;
 };
 
 export type FloatNullableWithAggregatesFilter = {
@@ -110,18 +117,18 @@ export type FloatNullableWithAggregatesFilter = {
   _max?: InputMaybe<NestedFloatNullableFilter>;
   _min?: InputMaybe<NestedFloatNullableFilter>;
   _sum?: InputMaybe<NestedFloatNullableFilter>;
-  equals?: InputMaybe<Scalars['Float']>;
-  gt?: InputMaybe<Scalars['Float']>;
-  gte?: InputMaybe<Scalars['Float']>;
-  in?: InputMaybe<Array<Scalars['Float']>>;
-  lt?: InputMaybe<Scalars['Float']>;
-  lte?: InputMaybe<Scalars['Float']>;
+  equals?: InputMaybe<Scalars["Float"]>;
+  gt?: InputMaybe<Scalars["Float"]>;
+  gte?: InputMaybe<Scalars["Float"]>;
+  in?: InputMaybe<Array<Scalars["Float"]>>;
+  lt?: InputMaybe<Scalars["Float"]>;
+  lte?: InputMaybe<Scalars["Float"]>;
   not?: InputMaybe<NestedFloatNullableWithAggregatesFilter>;
-  notIn?: InputMaybe<Array<Scalars['Float']>>;
+  notIn?: InputMaybe<Array<Scalars["Float"]>>;
 };
 
 export type Mutation = {
-  __typename?: 'Mutation';
+  __typename?: "Mutation";
   createManyRestaurants: AffectedRowsOutput;
   createRestaurants: Restaurants;
   deleteManyRestaurants: AffectedRowsOutput;
@@ -131,39 +138,32 @@ export type Mutation = {
   upsertRestaurants: Restaurants;
 };
 
-
 export type MutationCreateManyRestaurantsArgs = {
   data: Array<RestaurantsCreateManyInput>;
-  skipDuplicates?: InputMaybe<Scalars['Boolean']>;
+  skipDuplicates?: InputMaybe<Scalars["Boolean"]>;
 };
-
 
 export type MutationCreateRestaurantsArgs = {
   data: RestaurantsCreateInput;
 };
 
-
 export type MutationDeleteManyRestaurantsArgs = {
   where?: InputMaybe<RestaurantsWhereInput>;
 };
 
-
 export type MutationDeleteRestaurantsArgs = {
   where: RestaurantsWhereUniqueInput;
 };
-
 
 export type MutationUpdateManyRestaurantsArgs = {
   data: RestaurantsUpdateManyMutationInput;
   where?: InputMaybe<RestaurantsWhereInput>;
 };
 
-
 export type MutationUpdateRestaurantsArgs = {
   data: RestaurantsUpdateInput;
   where: RestaurantsWhereUniqueInput;
 };
-
 
 export type MutationUpsertRestaurantsArgs = {
   create: RestaurantsCreateInput;
@@ -172,25 +172,25 @@ export type MutationUpsertRestaurantsArgs = {
 };
 
 export type NestedBigIntFilter = {
-  equals?: InputMaybe<Scalars['BigInt']>;
-  gt?: InputMaybe<Scalars['BigInt']>;
-  gte?: InputMaybe<Scalars['BigInt']>;
-  in?: InputMaybe<Array<Scalars['BigInt']>>;
-  lt?: InputMaybe<Scalars['BigInt']>;
-  lte?: InputMaybe<Scalars['BigInt']>;
+  equals?: InputMaybe<Scalars["BigInt"]>;
+  gt?: InputMaybe<Scalars["BigInt"]>;
+  gte?: InputMaybe<Scalars["BigInt"]>;
+  in?: InputMaybe<Array<Scalars["BigInt"]>>;
+  lt?: InputMaybe<Scalars["BigInt"]>;
+  lte?: InputMaybe<Scalars["BigInt"]>;
   not?: InputMaybe<NestedBigIntFilter>;
-  notIn?: InputMaybe<Array<Scalars['BigInt']>>;
+  notIn?: InputMaybe<Array<Scalars["BigInt"]>>;
 };
 
 export type NestedBigIntNullableFilter = {
-  equals?: InputMaybe<Scalars['BigInt']>;
-  gt?: InputMaybe<Scalars['BigInt']>;
-  gte?: InputMaybe<Scalars['BigInt']>;
-  in?: InputMaybe<Array<Scalars['BigInt']>>;
-  lt?: InputMaybe<Scalars['BigInt']>;
-  lte?: InputMaybe<Scalars['BigInt']>;
+  equals?: InputMaybe<Scalars["BigInt"]>;
+  gt?: InputMaybe<Scalars["BigInt"]>;
+  gte?: InputMaybe<Scalars["BigInt"]>;
+  in?: InputMaybe<Array<Scalars["BigInt"]>>;
+  lt?: InputMaybe<Scalars["BigInt"]>;
+  lte?: InputMaybe<Scalars["BigInt"]>;
   not?: InputMaybe<NestedBigIntNullableFilter>;
-  notIn?: InputMaybe<Array<Scalars['BigInt']>>;
+  notIn?: InputMaybe<Array<Scalars["BigInt"]>>;
 };
 
 export type NestedBigIntNullableWithAggregatesFilter = {
@@ -199,14 +199,14 @@ export type NestedBigIntNullableWithAggregatesFilter = {
   _max?: InputMaybe<NestedBigIntNullableFilter>;
   _min?: InputMaybe<NestedBigIntNullableFilter>;
   _sum?: InputMaybe<NestedBigIntNullableFilter>;
-  equals?: InputMaybe<Scalars['BigInt']>;
-  gt?: InputMaybe<Scalars['BigInt']>;
-  gte?: InputMaybe<Scalars['BigInt']>;
-  in?: InputMaybe<Array<Scalars['BigInt']>>;
-  lt?: InputMaybe<Scalars['BigInt']>;
-  lte?: InputMaybe<Scalars['BigInt']>;
+  equals?: InputMaybe<Scalars["BigInt"]>;
+  gt?: InputMaybe<Scalars["BigInt"]>;
+  gte?: InputMaybe<Scalars["BigInt"]>;
+  in?: InputMaybe<Array<Scalars["BigInt"]>>;
+  lt?: InputMaybe<Scalars["BigInt"]>;
+  lte?: InputMaybe<Scalars["BigInt"]>;
   not?: InputMaybe<NestedBigIntNullableWithAggregatesFilter>;
-  notIn?: InputMaybe<Array<Scalars['BigInt']>>;
+  notIn?: InputMaybe<Array<Scalars["BigInt"]>>;
 };
 
 export type NestedBigIntWithAggregatesFilter = {
@@ -215,36 +215,36 @@ export type NestedBigIntWithAggregatesFilter = {
   _max?: InputMaybe<NestedBigIntFilter>;
   _min?: InputMaybe<NestedBigIntFilter>;
   _sum?: InputMaybe<NestedBigIntFilter>;
-  equals?: InputMaybe<Scalars['BigInt']>;
-  gt?: InputMaybe<Scalars['BigInt']>;
-  gte?: InputMaybe<Scalars['BigInt']>;
-  in?: InputMaybe<Array<Scalars['BigInt']>>;
-  lt?: InputMaybe<Scalars['BigInt']>;
-  lte?: InputMaybe<Scalars['BigInt']>;
+  equals?: InputMaybe<Scalars["BigInt"]>;
+  gt?: InputMaybe<Scalars["BigInt"]>;
+  gte?: InputMaybe<Scalars["BigInt"]>;
+  in?: InputMaybe<Array<Scalars["BigInt"]>>;
+  lt?: InputMaybe<Scalars["BigInt"]>;
+  lte?: InputMaybe<Scalars["BigInt"]>;
   not?: InputMaybe<NestedBigIntWithAggregatesFilter>;
-  notIn?: InputMaybe<Array<Scalars['BigInt']>>;
+  notIn?: InputMaybe<Array<Scalars["BigInt"]>>;
 };
 
 export type NestedFloatFilter = {
-  equals?: InputMaybe<Scalars['Float']>;
-  gt?: InputMaybe<Scalars['Float']>;
-  gte?: InputMaybe<Scalars['Float']>;
-  in?: InputMaybe<Array<Scalars['Float']>>;
-  lt?: InputMaybe<Scalars['Float']>;
-  lte?: InputMaybe<Scalars['Float']>;
+  equals?: InputMaybe<Scalars["Float"]>;
+  gt?: InputMaybe<Scalars["Float"]>;
+  gte?: InputMaybe<Scalars["Float"]>;
+  in?: InputMaybe<Array<Scalars["Float"]>>;
+  lt?: InputMaybe<Scalars["Float"]>;
+  lte?: InputMaybe<Scalars["Float"]>;
   not?: InputMaybe<NestedFloatFilter>;
-  notIn?: InputMaybe<Array<Scalars['Float']>>;
+  notIn?: InputMaybe<Array<Scalars["Float"]>>;
 };
 
 export type NestedFloatNullableFilter = {
-  equals?: InputMaybe<Scalars['Float']>;
-  gt?: InputMaybe<Scalars['Float']>;
-  gte?: InputMaybe<Scalars['Float']>;
-  in?: InputMaybe<Array<Scalars['Float']>>;
-  lt?: InputMaybe<Scalars['Float']>;
-  lte?: InputMaybe<Scalars['Float']>;
+  equals?: InputMaybe<Scalars["Float"]>;
+  gt?: InputMaybe<Scalars["Float"]>;
+  gte?: InputMaybe<Scalars["Float"]>;
+  in?: InputMaybe<Array<Scalars["Float"]>>;
+  lt?: InputMaybe<Scalars["Float"]>;
+  lte?: InputMaybe<Scalars["Float"]>;
   not?: InputMaybe<NestedFloatNullableFilter>;
-  notIn?: InputMaybe<Array<Scalars['Float']>>;
+  notIn?: InputMaybe<Array<Scalars["Float"]>>;
 };
 
 export type NestedFloatNullableWithAggregatesFilter = {
@@ -253,91 +253,91 @@ export type NestedFloatNullableWithAggregatesFilter = {
   _max?: InputMaybe<NestedFloatNullableFilter>;
   _min?: InputMaybe<NestedFloatNullableFilter>;
   _sum?: InputMaybe<NestedFloatNullableFilter>;
-  equals?: InputMaybe<Scalars['Float']>;
-  gt?: InputMaybe<Scalars['Float']>;
-  gte?: InputMaybe<Scalars['Float']>;
-  in?: InputMaybe<Array<Scalars['Float']>>;
-  lt?: InputMaybe<Scalars['Float']>;
-  lte?: InputMaybe<Scalars['Float']>;
+  equals?: InputMaybe<Scalars["Float"]>;
+  gt?: InputMaybe<Scalars["Float"]>;
+  gte?: InputMaybe<Scalars["Float"]>;
+  in?: InputMaybe<Array<Scalars["Float"]>>;
+  lt?: InputMaybe<Scalars["Float"]>;
+  lte?: InputMaybe<Scalars["Float"]>;
   not?: InputMaybe<NestedFloatNullableWithAggregatesFilter>;
-  notIn?: InputMaybe<Array<Scalars['Float']>>;
+  notIn?: InputMaybe<Array<Scalars["Float"]>>;
 };
 
 export type NestedIntFilter = {
-  equals?: InputMaybe<Scalars['Int']>;
-  gt?: InputMaybe<Scalars['Int']>;
-  gte?: InputMaybe<Scalars['Int']>;
-  in?: InputMaybe<Array<Scalars['Int']>>;
-  lt?: InputMaybe<Scalars['Int']>;
-  lte?: InputMaybe<Scalars['Int']>;
+  equals?: InputMaybe<Scalars["Int"]>;
+  gt?: InputMaybe<Scalars["Int"]>;
+  gte?: InputMaybe<Scalars["Int"]>;
+  in?: InputMaybe<Array<Scalars["Int"]>>;
+  lt?: InputMaybe<Scalars["Int"]>;
+  lte?: InputMaybe<Scalars["Int"]>;
   not?: InputMaybe<NestedIntFilter>;
-  notIn?: InputMaybe<Array<Scalars['Int']>>;
+  notIn?: InputMaybe<Array<Scalars["Int"]>>;
 };
 
 export type NestedIntNullableFilter = {
-  equals?: InputMaybe<Scalars['Int']>;
-  gt?: InputMaybe<Scalars['Int']>;
-  gte?: InputMaybe<Scalars['Int']>;
-  in?: InputMaybe<Array<Scalars['Int']>>;
-  lt?: InputMaybe<Scalars['Int']>;
-  lte?: InputMaybe<Scalars['Int']>;
+  equals?: InputMaybe<Scalars["Int"]>;
+  gt?: InputMaybe<Scalars["Int"]>;
+  gte?: InputMaybe<Scalars["Int"]>;
+  in?: InputMaybe<Array<Scalars["Int"]>>;
+  lt?: InputMaybe<Scalars["Int"]>;
+  lte?: InputMaybe<Scalars["Int"]>;
   not?: InputMaybe<NestedIntNullableFilter>;
-  notIn?: InputMaybe<Array<Scalars['Int']>>;
+  notIn?: InputMaybe<Array<Scalars["Int"]>>;
 };
 
 export type NestedStringNullableFilter = {
-  contains?: InputMaybe<Scalars['String']>;
-  endsWith?: InputMaybe<Scalars['String']>;
-  equals?: InputMaybe<Scalars['String']>;
-  gt?: InputMaybe<Scalars['String']>;
-  gte?: InputMaybe<Scalars['String']>;
-  in?: InputMaybe<Array<Scalars['String']>>;
-  lt?: InputMaybe<Scalars['String']>;
-  lte?: InputMaybe<Scalars['String']>;
+  contains?: InputMaybe<Scalars["String"]>;
+  endsWith?: InputMaybe<Scalars["String"]>;
+  equals?: InputMaybe<Scalars["String"]>;
+  gt?: InputMaybe<Scalars["String"]>;
+  gte?: InputMaybe<Scalars["String"]>;
+  in?: InputMaybe<Array<Scalars["String"]>>;
+  lt?: InputMaybe<Scalars["String"]>;
+  lte?: InputMaybe<Scalars["String"]>;
   not?: InputMaybe<NestedStringNullableFilter>;
-  notIn?: InputMaybe<Array<Scalars['String']>>;
-  startsWith?: InputMaybe<Scalars['String']>;
+  notIn?: InputMaybe<Array<Scalars["String"]>>;
+  startsWith?: InputMaybe<Scalars["String"]>;
 };
 
 export type NestedStringNullableWithAggregatesFilter = {
   _count?: InputMaybe<NestedIntNullableFilter>;
   _max?: InputMaybe<NestedStringNullableFilter>;
   _min?: InputMaybe<NestedStringNullableFilter>;
-  contains?: InputMaybe<Scalars['String']>;
-  endsWith?: InputMaybe<Scalars['String']>;
-  equals?: InputMaybe<Scalars['String']>;
-  gt?: InputMaybe<Scalars['String']>;
-  gte?: InputMaybe<Scalars['String']>;
-  in?: InputMaybe<Array<Scalars['String']>>;
-  lt?: InputMaybe<Scalars['String']>;
-  lte?: InputMaybe<Scalars['String']>;
+  contains?: InputMaybe<Scalars["String"]>;
+  endsWith?: InputMaybe<Scalars["String"]>;
+  equals?: InputMaybe<Scalars["String"]>;
+  gt?: InputMaybe<Scalars["String"]>;
+  gte?: InputMaybe<Scalars["String"]>;
+  in?: InputMaybe<Array<Scalars["String"]>>;
+  lt?: InputMaybe<Scalars["String"]>;
+  lte?: InputMaybe<Scalars["String"]>;
   not?: InputMaybe<NestedStringNullableWithAggregatesFilter>;
-  notIn?: InputMaybe<Array<Scalars['String']>>;
-  startsWith?: InputMaybe<Scalars['String']>;
+  notIn?: InputMaybe<Array<Scalars["String"]>>;
+  startsWith?: InputMaybe<Scalars["String"]>;
 };
 
 export type NullableBigIntFieldUpdateOperationsInput = {
-  decrement?: InputMaybe<Scalars['BigInt']>;
-  divide?: InputMaybe<Scalars['BigInt']>;
-  increment?: InputMaybe<Scalars['BigInt']>;
-  multiply?: InputMaybe<Scalars['BigInt']>;
-  set?: InputMaybe<Scalars['BigInt']>;
+  decrement?: InputMaybe<Scalars["BigInt"]>;
+  divide?: InputMaybe<Scalars["BigInt"]>;
+  increment?: InputMaybe<Scalars["BigInt"]>;
+  multiply?: InputMaybe<Scalars["BigInt"]>;
+  set?: InputMaybe<Scalars["BigInt"]>;
 };
 
 export type NullableFloatFieldUpdateOperationsInput = {
-  decrement?: InputMaybe<Scalars['Float']>;
-  divide?: InputMaybe<Scalars['Float']>;
-  increment?: InputMaybe<Scalars['Float']>;
-  multiply?: InputMaybe<Scalars['Float']>;
-  set?: InputMaybe<Scalars['Float']>;
+  decrement?: InputMaybe<Scalars["Float"]>;
+  divide?: InputMaybe<Scalars["Float"]>;
+  increment?: InputMaybe<Scalars["Float"]>;
+  multiply?: InputMaybe<Scalars["Float"]>;
+  set?: InputMaybe<Scalars["Float"]>;
 };
 
 export type NullableStringFieldUpdateOperationsInput = {
-  set?: InputMaybe<Scalars['String']>;
+  set?: InputMaybe<Scalars["String"]>;
 };
 
 export type Query = {
-  __typename?: 'Query';
+  __typename?: "Query";
   aggregateRestaurants: AggregateRestaurants;
   findFirstRestaurants?: Maybe<Restaurants>;
   findManyRestaurants: Array<Restaurants>;
@@ -345,75 +345,70 @@ export type Query = {
   groupByRestaurants: Array<RestaurantsGroupBy>;
 };
 
-
 export type QueryAggregateRestaurantsArgs = {
   cursor?: InputMaybe<RestaurantsWhereUniqueInput>;
   orderBy?: InputMaybe<Array<RestaurantsOrderByWithRelationInput>>;
-  skip?: InputMaybe<Scalars['Int']>;
-  take?: InputMaybe<Scalars['Int']>;
+  skip?: InputMaybe<Scalars["Int"]>;
+  take?: InputMaybe<Scalars["Int"]>;
   where?: InputMaybe<RestaurantsWhereInput>;
 };
-
 
 export type QueryFindFirstRestaurantsArgs = {
   cursor?: InputMaybe<RestaurantsWhereUniqueInput>;
   distinct?: InputMaybe<Array<RestaurantsScalarFieldEnum>>;
   orderBy?: InputMaybe<Array<RestaurantsOrderByWithRelationInput>>;
-  skip?: InputMaybe<Scalars['Int']>;
-  take?: InputMaybe<Scalars['Int']>;
+  skip?: InputMaybe<Scalars["Int"]>;
+  take?: InputMaybe<Scalars["Int"]>;
   where?: InputMaybe<RestaurantsWhereInput>;
 };
-
 
 export type QueryFindManyRestaurantsArgs = {
   cursor?: InputMaybe<RestaurantsWhereUniqueInput>;
   distinct?: InputMaybe<Array<RestaurantsScalarFieldEnum>>;
   orderBy?: InputMaybe<Array<RestaurantsOrderByWithRelationInput>>;
-  skip?: InputMaybe<Scalars['Int']>;
-  take?: InputMaybe<Scalars['Int']>;
+  skip?: InputMaybe<Scalars["Int"]>;
+  take?: InputMaybe<Scalars["Int"]>;
   where?: InputMaybe<RestaurantsWhereInput>;
 };
-
 
 export type QueryFindUniqueRestaurantsArgs = {
   where: RestaurantsWhereUniqueInput;
 };
 
-
 export type QueryGroupByRestaurantsArgs = {
   by: Array<RestaurantsScalarFieldEnum>;
   having?: InputMaybe<RestaurantsScalarWhereWithAggregatesInput>;
   orderBy?: InputMaybe<Array<RestaurantsOrderByWithAggregationInput>>;
-  skip?: InputMaybe<Scalars['Int']>;
-  take?: InputMaybe<Scalars['Int']>;
+  skip?: InputMaybe<Scalars["Int"]>;
+  take?: InputMaybe<Scalars["Int"]>;
   where?: InputMaybe<RestaurantsWhereInput>;
 };
 
 export enum QueryMode {
-  Default = 'default',
-  Insensitive = 'insensitive'
+  Default = "default",
+  Insensitive = "insensitive",
 }
 
 export type Restaurants = {
-  __typename?: 'Restaurants';
-  guide?: Maybe<Scalars['String']>;
-  id: Scalars['BigInt'];
-  img?: Maybe<Scalars['String']>;
-  lat?: Maybe<Scalars['Float']>;
-  link?: Maybe<Scalars['String']>;
-  location?: Maybe<Scalars['String']>;
-  long?: Maybe<Scalars['Float']>;
-  name?: Maybe<Scalars['String']>;
-  rating?: Maybe<Scalars['BigInt']>;
-  type?: Maybe<Scalars['String']>;
+  __typename?: "Restaurants";
+  guide?: Maybe<Scalars["String"]>;
+  id: Scalars["BigInt"];
+  img?: Maybe<Scalars["String"]>;
+  lat?: Maybe<Scalars["Float"]>;
+  link?: Maybe<Scalars["String"]>;
+  location?: Maybe<Scalars["String"]>;
+  long?: Maybe<Scalars["Float"]>;
+  name?: Maybe<Scalars["String"]>;
+  rating?: Maybe<Scalars["BigInt"]>;
+  type?: Maybe<Scalars["String"]>;
 };
 
 export type RestaurantsAvgAggregate = {
-  __typename?: 'RestaurantsAvgAggregate';
-  id?: Maybe<Scalars['Float']>;
-  lat?: Maybe<Scalars['Float']>;
-  long?: Maybe<Scalars['Float']>;
-  rating?: Maybe<Scalars['Float']>;
+  __typename?: "RestaurantsAvgAggregate";
+  id?: Maybe<Scalars["Float"]>;
+  lat?: Maybe<Scalars["Float"]>;
+  long?: Maybe<Scalars["Float"]>;
+  rating?: Maybe<Scalars["Float"]>;
 };
 
 export type RestaurantsAvgOrderByAggregateInput = {
@@ -424,18 +419,18 @@ export type RestaurantsAvgOrderByAggregateInput = {
 };
 
 export type RestaurantsCountAggregate = {
-  __typename?: 'RestaurantsCountAggregate';
-  _all: Scalars['Int'];
-  guide: Scalars['Int'];
-  id: Scalars['Int'];
-  img: Scalars['Int'];
-  lat: Scalars['Int'];
-  link: Scalars['Int'];
-  location: Scalars['Int'];
-  long: Scalars['Int'];
-  name: Scalars['Int'];
-  rating: Scalars['Int'];
-  type: Scalars['Int'];
+  __typename?: "RestaurantsCountAggregate";
+  _all: Scalars["Int"];
+  guide: Scalars["Int"];
+  id: Scalars["Int"];
+  img: Scalars["Int"];
+  lat: Scalars["Int"];
+  link: Scalars["Int"];
+  location: Scalars["Int"];
+  long: Scalars["Int"];
+  name: Scalars["Int"];
+  rating: Scalars["Int"];
+  type: Scalars["Int"];
 };
 
 export type RestaurantsCountOrderByAggregateInput = {
@@ -452,62 +447,62 @@ export type RestaurantsCountOrderByAggregateInput = {
 };
 
 export type RestaurantsCreateInput = {
-  guide?: InputMaybe<Scalars['String']>;
-  id: Scalars['BigInt'];
-  img?: InputMaybe<Scalars['String']>;
-  lat?: InputMaybe<Scalars['Float']>;
-  link?: InputMaybe<Scalars['String']>;
-  location?: InputMaybe<Scalars['String']>;
-  long?: InputMaybe<Scalars['Float']>;
-  name?: InputMaybe<Scalars['String']>;
-  rating?: InputMaybe<Scalars['BigInt']>;
-  type?: InputMaybe<Scalars['String']>;
+  guide?: InputMaybe<Scalars["String"]>;
+  id: Scalars["BigInt"];
+  img?: InputMaybe<Scalars["String"]>;
+  lat?: InputMaybe<Scalars["Float"]>;
+  link?: InputMaybe<Scalars["String"]>;
+  location?: InputMaybe<Scalars["String"]>;
+  long?: InputMaybe<Scalars["Float"]>;
+  name?: InputMaybe<Scalars["String"]>;
+  rating?: InputMaybe<Scalars["BigInt"]>;
+  type?: InputMaybe<Scalars["String"]>;
 };
 
 export type RestaurantsCreateManyInput = {
-  guide?: InputMaybe<Scalars['String']>;
-  id: Scalars['BigInt'];
-  img?: InputMaybe<Scalars['String']>;
-  lat?: InputMaybe<Scalars['Float']>;
-  link?: InputMaybe<Scalars['String']>;
-  location?: InputMaybe<Scalars['String']>;
-  long?: InputMaybe<Scalars['Float']>;
-  name?: InputMaybe<Scalars['String']>;
-  rating?: InputMaybe<Scalars['BigInt']>;
-  type?: InputMaybe<Scalars['String']>;
+  guide?: InputMaybe<Scalars["String"]>;
+  id: Scalars["BigInt"];
+  img?: InputMaybe<Scalars["String"]>;
+  lat?: InputMaybe<Scalars["Float"]>;
+  link?: InputMaybe<Scalars["String"]>;
+  location?: InputMaybe<Scalars["String"]>;
+  long?: InputMaybe<Scalars["Float"]>;
+  name?: InputMaybe<Scalars["String"]>;
+  rating?: InputMaybe<Scalars["BigInt"]>;
+  type?: InputMaybe<Scalars["String"]>;
 };
 
 export type RestaurantsGroupBy = {
-  __typename?: 'RestaurantsGroupBy';
+  __typename?: "RestaurantsGroupBy";
   _avg?: Maybe<RestaurantsAvgAggregate>;
   _count?: Maybe<RestaurantsCountAggregate>;
   _max?: Maybe<RestaurantsMaxAggregate>;
   _min?: Maybe<RestaurantsMinAggregate>;
   _sum?: Maybe<RestaurantsSumAggregate>;
-  guide?: Maybe<Scalars['String']>;
-  id: Scalars['BigInt'];
-  img?: Maybe<Scalars['String']>;
-  lat?: Maybe<Scalars['Float']>;
-  link?: Maybe<Scalars['String']>;
-  location?: Maybe<Scalars['String']>;
-  long?: Maybe<Scalars['Float']>;
-  name?: Maybe<Scalars['String']>;
-  rating?: Maybe<Scalars['BigInt']>;
-  type?: Maybe<Scalars['String']>;
+  guide?: Maybe<Scalars["String"]>;
+  id: Scalars["BigInt"];
+  img?: Maybe<Scalars["String"]>;
+  lat?: Maybe<Scalars["Float"]>;
+  link?: Maybe<Scalars["String"]>;
+  location?: Maybe<Scalars["String"]>;
+  long?: Maybe<Scalars["Float"]>;
+  name?: Maybe<Scalars["String"]>;
+  rating?: Maybe<Scalars["BigInt"]>;
+  type?: Maybe<Scalars["String"]>;
 };
 
 export type RestaurantsMaxAggregate = {
-  __typename?: 'RestaurantsMaxAggregate';
-  guide?: Maybe<Scalars['String']>;
-  id?: Maybe<Scalars['BigInt']>;
-  img?: Maybe<Scalars['String']>;
-  lat?: Maybe<Scalars['Float']>;
-  link?: Maybe<Scalars['String']>;
-  location?: Maybe<Scalars['String']>;
-  long?: Maybe<Scalars['Float']>;
-  name?: Maybe<Scalars['String']>;
-  rating?: Maybe<Scalars['BigInt']>;
-  type?: Maybe<Scalars['String']>;
+  __typename?: "RestaurantsMaxAggregate";
+  guide?: Maybe<Scalars["String"]>;
+  id?: Maybe<Scalars["BigInt"]>;
+  img?: Maybe<Scalars["String"]>;
+  lat?: Maybe<Scalars["Float"]>;
+  link?: Maybe<Scalars["String"]>;
+  location?: Maybe<Scalars["String"]>;
+  long?: Maybe<Scalars["Float"]>;
+  name?: Maybe<Scalars["String"]>;
+  rating?: Maybe<Scalars["BigInt"]>;
+  type?: Maybe<Scalars["String"]>;
 };
 
 export type RestaurantsMaxOrderByAggregateInput = {
@@ -524,17 +519,17 @@ export type RestaurantsMaxOrderByAggregateInput = {
 };
 
 export type RestaurantsMinAggregate = {
-  __typename?: 'RestaurantsMinAggregate';
-  guide?: Maybe<Scalars['String']>;
-  id?: Maybe<Scalars['BigInt']>;
-  img?: Maybe<Scalars['String']>;
-  lat?: Maybe<Scalars['Float']>;
-  link?: Maybe<Scalars['String']>;
-  location?: Maybe<Scalars['String']>;
-  long?: Maybe<Scalars['Float']>;
-  name?: Maybe<Scalars['String']>;
-  rating?: Maybe<Scalars['BigInt']>;
-  type?: Maybe<Scalars['String']>;
+  __typename?: "RestaurantsMinAggregate";
+  guide?: Maybe<Scalars["String"]>;
+  id?: Maybe<Scalars["BigInt"]>;
+  img?: Maybe<Scalars["String"]>;
+  lat?: Maybe<Scalars["Float"]>;
+  link?: Maybe<Scalars["String"]>;
+  location?: Maybe<Scalars["String"]>;
+  long?: Maybe<Scalars["Float"]>;
+  name?: Maybe<Scalars["String"]>;
+  rating?: Maybe<Scalars["BigInt"]>;
+  type?: Maybe<Scalars["String"]>;
 };
 
 export type RestaurantsMinOrderByAggregateInput = {
@@ -582,16 +577,16 @@ export type RestaurantsOrderByWithRelationInput = {
 };
 
 export enum RestaurantsScalarFieldEnum {
-  Guide = 'guide',
-  Id = 'id',
-  Img = 'img',
-  Lat = 'lat',
-  Link = 'link',
-  Location = 'location',
-  Long = 'long',
-  Name = 'name',
-  Rating = 'rating',
-  Type = 'type'
+  Guide = "guide",
+  Id = "id",
+  Img = "img",
+  Lat = "lat",
+  Link = "link",
+  Location = "location",
+  Long = "long",
+  Name = "name",
+  Rating = "rating",
+  Type = "type",
 }
 
 export type RestaurantsScalarWhereWithAggregatesInput = {
@@ -611,11 +606,11 @@ export type RestaurantsScalarWhereWithAggregatesInput = {
 };
 
 export type RestaurantsSumAggregate = {
-  __typename?: 'RestaurantsSumAggregate';
-  id?: Maybe<Scalars['BigInt']>;
-  lat?: Maybe<Scalars['Float']>;
-  long?: Maybe<Scalars['Float']>;
-  rating?: Maybe<Scalars['BigInt']>;
+  __typename?: "RestaurantsSumAggregate";
+  id?: Maybe<Scalars["BigInt"]>;
+  lat?: Maybe<Scalars["Float"]>;
+  long?: Maybe<Scalars["Float"]>;
+  rating?: Maybe<Scalars["BigInt"]>;
 };
 
 export type RestaurantsSumOrderByAggregateInput = {
@@ -668,76 +663,108 @@ export type RestaurantsWhereInput = {
 };
 
 export type RestaurantsWhereUniqueInput = {
-  id?: InputMaybe<Scalars['BigInt']>;
+  id?: InputMaybe<Scalars["BigInt"]>;
 };
 
 export enum SortOrder {
-  Asc = 'asc',
-  Desc = 'desc'
+  Asc = "asc",
+  Desc = "desc",
 }
 
 export type StringNullableFilter = {
-  contains?: InputMaybe<Scalars['String']>;
-  endsWith?: InputMaybe<Scalars['String']>;
-  equals?: InputMaybe<Scalars['String']>;
-  gt?: InputMaybe<Scalars['String']>;
-  gte?: InputMaybe<Scalars['String']>;
-  in?: InputMaybe<Array<Scalars['String']>>;
-  lt?: InputMaybe<Scalars['String']>;
-  lte?: InputMaybe<Scalars['String']>;
+  contains?: InputMaybe<Scalars["String"]>;
+  endsWith?: InputMaybe<Scalars["String"]>;
+  equals?: InputMaybe<Scalars["String"]>;
+  gt?: InputMaybe<Scalars["String"]>;
+  gte?: InputMaybe<Scalars["String"]>;
+  in?: InputMaybe<Array<Scalars["String"]>>;
+  lt?: InputMaybe<Scalars["String"]>;
+  lte?: InputMaybe<Scalars["String"]>;
   mode?: InputMaybe<QueryMode>;
   not?: InputMaybe<NestedStringNullableFilter>;
-  notIn?: InputMaybe<Array<Scalars['String']>>;
-  startsWith?: InputMaybe<Scalars['String']>;
+  notIn?: InputMaybe<Array<Scalars["String"]>>;
+  startsWith?: InputMaybe<Scalars["String"]>;
 };
 
 export type StringNullableWithAggregatesFilter = {
   _count?: InputMaybe<NestedIntNullableFilter>;
   _max?: InputMaybe<NestedStringNullableFilter>;
   _min?: InputMaybe<NestedStringNullableFilter>;
-  contains?: InputMaybe<Scalars['String']>;
-  endsWith?: InputMaybe<Scalars['String']>;
-  equals?: InputMaybe<Scalars['String']>;
-  gt?: InputMaybe<Scalars['String']>;
-  gte?: InputMaybe<Scalars['String']>;
-  in?: InputMaybe<Array<Scalars['String']>>;
-  lt?: InputMaybe<Scalars['String']>;
-  lte?: InputMaybe<Scalars['String']>;
+  contains?: InputMaybe<Scalars["String"]>;
+  endsWith?: InputMaybe<Scalars["String"]>;
+  equals?: InputMaybe<Scalars["String"]>;
+  gt?: InputMaybe<Scalars["String"]>;
+  gte?: InputMaybe<Scalars["String"]>;
+  in?: InputMaybe<Array<Scalars["String"]>>;
+  lt?: InputMaybe<Scalars["String"]>;
+  lte?: InputMaybe<Scalars["String"]>;
   mode?: InputMaybe<QueryMode>;
   not?: InputMaybe<NestedStringNullableWithAggregatesFilter>;
-  notIn?: InputMaybe<Array<Scalars['String']>>;
-  startsWith?: InputMaybe<Scalars['String']>;
+  notIn?: InputMaybe<Array<Scalars["String"]>>;
+  startsWith?: InputMaybe<Scalars["String"]>;
 };
 
-export type RestaurantFragment = { __typename?: 'Restaurants', id: any, name?: string | null, rating?: any | null, guide?: string | null, img?: string | null, link?: string | null, location?: string | null, type?: string | null, lat?: number | null, long?: number | null };
+export type RestaurantFragment = {
+  __typename?: "Restaurants";
+  id: any;
+  name?: string | null;
+  rating?: any | null;
+  guide?: string | null;
+  img?: string | null;
+  link?: string | null;
+  location?: string | null;
+  type?: string | null;
+  lat?: number | null;
+  long?: number | null;
+};
 
-export type FindManyRestaurantsQueryVariables = Exact<{ [key: string]: never; }>;
+export type FindManyRestaurantsQueryVariables = Exact<{ [key: string]: never }>;
 
-
-export type FindManyRestaurantsQuery = { __typename?: 'Query', findManyRestaurants: Array<{ __typename?: 'Restaurants', id: any, name?: string | null, rating?: any | null, guide?: string | null, img?: string | null, link?: string | null, location?: string | null, type?: string | null, lat?: number | null, long?: number | null }> };
+export type FindManyRestaurantsQuery = {
+  __typename?: "Query";
+  findManyRestaurants: Array<{
+    __typename?: "Restaurants";
+    id: any;
+    name?: string | null;
+    rating?: any | null;
+    guide?: string | null;
+    img?: string | null;
+    link?: string | null;
+    location?: string | null;
+    type?: string | null;
+    lat?: number | null;
+    long?: number | null;
+  }>;
+};
 
 export const RestaurantFragmentDoc = gql`
-    fragment Restaurant on Restaurants {
-  id
-  name
-  rating
-  guide
-  img
-  link
-  location
-  type
-  lat
-  long
-}
-    `;
-export const FindManyRestaurantsDocument = gql`
-    query FindManyRestaurants {
-  findManyRestaurants {
-    ...Restaurant
+  fragment Restaurant on Restaurants {
+    id
+    name
+    rating
+    guide
+    img
+    link
+    location
+    type
+    lat
+    long
   }
-}
-    ${RestaurantFragmentDoc}`;
+`;
+export const FindManyRestaurantsDocument = gql`
+  query FindManyRestaurants {
+    findManyRestaurants {
+      ...Restaurant
+    }
+  }
+  ${RestaurantFragmentDoc}
+`;
 
-export function useFindManyRestaurantsQuery(options?: Omit<Urql.UseQueryArgs<FindManyRestaurantsQueryVariables>, 'query'>) {
-  return Urql.useQuery<FindManyRestaurantsQuery>({ query: FindManyRestaurantsDocument, ...options });
-};
+export function useFindManyRestaurantsQuery(
+  options?: Omit<Urql.UseQueryArgs<FindManyRestaurantsQueryVariables>, "query">
+) {
+  return Urql.useQuery<FindManyRestaurantsQuery>({
+    query: FindManyRestaurantsDocument as DocumentNode,
+    ...options,
+  });
+}
