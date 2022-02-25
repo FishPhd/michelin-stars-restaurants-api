@@ -5,7 +5,7 @@
   "scripts": {
     "watch": "tsc -w",
     "dev": "tsnd --respawn dist/index.js",
-    "migrate": "prisma migrate dev --name init",
+    "migrate": "prisma migrate dev",
     "pull": "prisma db pull",
     "gen": "prisma generate && prettier --write prisma/**/*.ts",
     "lint": "eslint . --ext .ts --fix",

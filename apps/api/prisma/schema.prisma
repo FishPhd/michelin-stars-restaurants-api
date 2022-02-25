@@ -23,6 +23,7 @@ model restaurants {
   type     String?
   lat      Float?
   long     Float?
+  year     BigInt?
 
   @@index([id], map: "ix_restaurants_id")
 }
