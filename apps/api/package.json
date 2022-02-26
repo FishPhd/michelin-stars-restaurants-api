@@ -2,6 +2,7 @@
   "name": "api",
   "version": "1.0.0",
   "main": "index.js",
+  "packageManager": "yarn@1.22.17",
   "scripts": {
     "watch": "tsc -w",
     "dev": "tsnd --respawn dist/index.js",
