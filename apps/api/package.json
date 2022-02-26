@@ -33,7 +33,6 @@
     "eslint-plugin-unused-imports": "^2.0.0",
     "ts-node": "^10.5.0",
     "ts-node-dev": "^1.1.8",
-    "type-graphql": "^1.1.1",
     "typegraphql-prisma": "^0.19.1"
   },
   "engines": {
