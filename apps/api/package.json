@@ -11,7 +11,8 @@
     "pull": "prisma db pull",
     "gen": "prisma generate && prettier --write prisma/**/*.ts",
     "lint": "eslint . --ext .ts --fix",
-    "prettier": "prettier --write prisma/**/*.ts"
+    "prettier": "prettier --write prisma/**/*.ts",
+    "build": "tsc"
   },
   "license": "MIT",
   "dependencies": {
