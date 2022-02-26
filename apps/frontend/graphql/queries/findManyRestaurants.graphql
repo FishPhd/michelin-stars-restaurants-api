@@ -1,5 +1,5 @@
-query FindManyRestaurants {
-  findManyRestaurants {
+query Restaurants {
+  restaurants: findManyRestaurants {
     ...Restaurant
   }
 }

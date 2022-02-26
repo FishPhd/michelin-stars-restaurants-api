@@ -2,18 +2,16 @@ import { DocumentNode } from "graphql";
 import React from "react";
 import { GoogleMap } from "../components/google-map";
 import {
-  FindManyRestaurantsDocument,
-  useFindManyRestaurantsQuery,
+  RestaurantsDocument,
+  useRestaurantsQuery,
 } from "../graphql/generated/graphql";
 import { client, ssrCache } from "../utils/withUrql";
 import Head from "next/head";
 
 export default function Home() {
-  const [
-    {
-      data: { findManyRestaurants: restaurants },
-    },
-  ] = useFindManyRestaurantsQuery();
+  const [{ data: { restaurants } = { restaurants: [] } }] =
+    useRestaurantsQuery() || [];
+
   return (
     <>
       <Head>
@@ -26,6 +24,6 @@ export default function Home() {
 }
 
 export async function getStaticProps(ctx) {
-  await client.query(FindManyRestaurantsDocument as DocumentNode).toPromise();
+  await client.query(RestaurantsDocument as DocumentNode).toPromise();
   return { props: { urqlState: ssrCache.extractData() } };
 }
