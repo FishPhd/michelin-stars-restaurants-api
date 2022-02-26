@@ -22,7 +22,7 @@ export default function Home() {
   );
 }
 
-export async function getServerSideProps(ctx) {
+export async function getStaticProps(ctx) {
   await client.query(FindManyRestaurantsDocument as DocumentNode).toPromise();
   return { props: { urqlState: ssrCache.extractData() } };
 }
