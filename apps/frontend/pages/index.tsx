@@ -9,8 +9,11 @@ import { client, ssrCache } from "../utils/withUrql";
 import Head from "next/head";
 
 export default function Home() {
-  const { data: { findManyRestaurants: restaurants } = {} } =
-    useFindManyRestaurantsQuery()[0];
+  const [
+    {
+      data: { findManyRestaurants: restaurants },
+    },
+  ] = useFindManyRestaurantsQuery();
   return (
     <>
       <Head>

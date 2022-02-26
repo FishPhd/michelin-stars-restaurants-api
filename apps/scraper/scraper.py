@@ -91,5 +91,5 @@ class Scraper:
         # Add delay to avoid timeouts
         time.sleep(self.delay_rate)
 
-        if current_page < self.total_pages:
+        if current_page < 1:
             return self.scrape(current_page + 1)
