@@ -19,11 +19,11 @@ class Postgres:
     def __init__(self):
         try:
             self.conn = psycopg2.connect(f"""
-                  dbname={db_name}
-                  user={user}
-                  host={host}
-                  password={password}
-                  """)
+                dbname={db_name}
+                user={user}
+                host={host}
+                password={password}
+                """)
         except:
             self.conn = None
             print("Unable to connect to Postgres DB. Is .env file present?")
