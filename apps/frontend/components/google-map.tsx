@@ -27,6 +27,7 @@ export class GoogleMap extends React.Component<MapProps> {
   }
 
   handleAttachGoogleMap() {
+    const google = window.google;
     this.map = new google.maps.Map(document.getElementById("google-map"), {
       center: this.defaultCenter,
       styles: styles,
@@ -39,6 +40,7 @@ export class GoogleMap extends React.Component<MapProps> {
   }
 
   handleDrawMarkers() {
+    const google = window.google;
     const infoWindow = new google.maps.InfoWindow({
       content: "",
       disableAutoPan: false,
