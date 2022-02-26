@@ -9,4 +9,5 @@ fragment Restaurant on Restaurants {
   type
   lat
   long
+  year
 }
