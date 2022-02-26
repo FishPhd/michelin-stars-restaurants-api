@@ -1,5 +1,4 @@
 import * as TypeGraphQL from "type-graphql";
-import * as GraphQLScalars from "graphql-scalars";
 import { RestaurantsUpdateManyMutationInput } from "../../../inputs/RestaurantsUpdateManyMutationInput";
 import { RestaurantsWhereInput } from "../../../inputs/RestaurantsWhereInput";
 

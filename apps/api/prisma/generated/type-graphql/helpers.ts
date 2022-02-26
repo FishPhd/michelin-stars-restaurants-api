@@ -4,7 +4,7 @@ export function transformFields(
   return Object.fromEntries(
     Object.entries(fields)
       // remove __typename and others
-      .filter(([key, value]) => !key.startsWith("__"))
+      .filter(([key, _]) => !key.startsWith("__"))
       .map<[string, any]>(([key, value]) => {
         if (Object.keys(value).length === 0) {
           return [key, true];
