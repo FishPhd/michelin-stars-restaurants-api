@@ -1,5 +1,6 @@
-
-export function transformFields(fields: Record<string, any>): Record<string, any> {
+export function transformFields(
+  fields: Record<string, any>
+): Record<string, any> {
   return Object.fromEntries(
     Object.entries(fields)
       // remove __typename and others
@@ -9,14 +10,16 @@ export function transformFields(fields: Record<string, any>): Record<string, any
           return [key, true];
         }
         return [key, transformFields(value)];
-      }),
+      })
   );
 }
 
 export function getPrismaFromContext(context: any) {
   const prismaClient = context.prisma;
   if (!prismaClient) {
-    throw new Error("Unable to find Prisma Client in GraphQL context. Please provide it under the `context.prisma` key.");
+    throw new Error(
+      "Unable to find Prisma Client in GraphQL context. Please provide it under the `context.prisma` key."
+    );
   }
   return prismaClient;
 }
@@ -29,11 +32,8 @@ export function transformCountFieldIntoSelectRelationsCount(_count: object) {
           ...Object.fromEntries(
             Object.entries(_count).filter(([_, v]) => v != null)
           ),
-        }
+        },
       },
     },
-  }
+  };
 }
-
-
-

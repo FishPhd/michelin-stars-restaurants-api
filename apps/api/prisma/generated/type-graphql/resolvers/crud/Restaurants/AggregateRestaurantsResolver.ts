@@ -4,14 +4,22 @@ import { GraphQLResolveInfo } from "graphql";
 import { AggregateRestaurantsArgs } from "./args/AggregateRestaurantsArgs";
 import { Restaurants } from "../../../models/Restaurants";
 import { AggregateRestaurants } from "../../outputs/AggregateRestaurants";
-import { transformFields, getPrismaFromContext, transformCountFieldIntoSelectRelationsCount } from "../../../helpers";
+import {
+  transformFields,
+  getPrismaFromContext,
+  transformCountFieldIntoSelectRelationsCount,
+} from "../../../helpers";
 
-@TypeGraphQL.Resolver(_of => Restaurants)
+@TypeGraphQL.Resolver((_of) => Restaurants)
 export class AggregateRestaurantsResolver {
-  @TypeGraphQL.Query(_returns => AggregateRestaurants, {
-    nullable: false
+  @TypeGraphQL.Query((_returns) => AggregateRestaurants, {
+    nullable: false,
   })
-  async aggregateRestaurants(@TypeGraphQL.Ctx() ctx: any, @TypeGraphQL.Info() info: GraphQLResolveInfo, @TypeGraphQL.Args() args: AggregateRestaurantsArgs): Promise<AggregateRestaurants> {
+  async aggregateRestaurants(
+    @TypeGraphQL.Ctx() ctx: any,
+    @TypeGraphQL.Info() info: GraphQLResolveInfo,
+    @TypeGraphQL.Args() args: AggregateRestaurantsArgs
+  ): Promise<AggregateRestaurants> {
     return getPrismaFromContext(ctx).restaurants.aggregate({
       ...args,
       ...transformFields(graphqlFields(info as any)),

@@ -8,71 +8,76 @@ import { FloatNullableWithAggregatesFilter } from "../inputs/FloatNullableWithAg
 import { StringNullableWithAggregatesFilter } from "../inputs/StringNullableWithAggregatesFilter";
 
 @TypeGraphQL.InputType("RestaurantsScalarWhereWithAggregatesInput", {
-  isAbstract: true
+  isAbstract: true,
 })
 export class RestaurantsScalarWhereWithAggregatesInput {
-  @TypeGraphQL.Field(_type => [RestaurantsScalarWhereWithAggregatesInput], {
-    nullable: true
+  @TypeGraphQL.Field((_type) => [RestaurantsScalarWhereWithAggregatesInput], {
+    nullable: true,
   })
   AND?: RestaurantsScalarWhereWithAggregatesInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [RestaurantsScalarWhereWithAggregatesInput], {
-    nullable: true
+  @TypeGraphQL.Field((_type) => [RestaurantsScalarWhereWithAggregatesInput], {
+    nullable: true,
   })
   OR?: RestaurantsScalarWhereWithAggregatesInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [RestaurantsScalarWhereWithAggregatesInput], {
-    nullable: true
+  @TypeGraphQL.Field((_type) => [RestaurantsScalarWhereWithAggregatesInput], {
+    nullable: true,
   })
   NOT?: RestaurantsScalarWhereWithAggregatesInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => BigIntWithAggregatesFilter, {
-    nullable: true
+  @TypeGraphQL.Field((_type) => BigIntWithAggregatesFilter, {
+    nullable: true,
   })
   id?: BigIntWithAggregatesFilter | undefined;
 
-  @TypeGraphQL.Field(_type => StringNullableWithAggregatesFilter, {
-    nullable: true
+  @TypeGraphQL.Field((_type) => StringNullableWithAggregatesFilter, {
+    nullable: true,
   })
   name?: StringNullableWithAggregatesFilter | undefined;
 
-  @TypeGraphQL.Field(_type => BigIntNullableWithAggregatesFilter, {
-    nullable: true
+  @TypeGraphQL.Field((_type) => BigIntNullableWithAggregatesFilter, {
+    nullable: true,
   })
   rating?: BigIntNullableWithAggregatesFilter | undefined;
 
-  @TypeGraphQL.Field(_type => StringNullableWithAggregatesFilter, {
-    nullable: true
+  @TypeGraphQL.Field((_type) => StringNullableWithAggregatesFilter, {
+    nullable: true,
   })
   guide?: StringNullableWithAggregatesFilter | undefined;
 
-  @TypeGraphQL.Field(_type => StringNullableWithAggregatesFilter, {
-    nullable: true
+  @TypeGraphQL.Field((_type) => StringNullableWithAggregatesFilter, {
+    nullable: true,
   })
   img?: StringNullableWithAggregatesFilter | undefined;
 
-  @TypeGraphQL.Field(_type => StringNullableWithAggregatesFilter, {
-    nullable: true
+  @TypeGraphQL.Field((_type) => StringNullableWithAggregatesFilter, {
+    nullable: true,
   })
   link?: StringNullableWithAggregatesFilter | undefined;
 
-  @TypeGraphQL.Field(_type => StringNullableWithAggregatesFilter, {
-    nullable: true
+  @TypeGraphQL.Field((_type) => StringNullableWithAggregatesFilter, {
+    nullable: true,
   })
   location?: StringNullableWithAggregatesFilter | undefined;
 
-  @TypeGraphQL.Field(_type => StringNullableWithAggregatesFilter, {
-    nullable: true
+  @TypeGraphQL.Field((_type) => StringNullableWithAggregatesFilter, {
+    nullable: true,
   })
   type?: StringNullableWithAggregatesFilter | undefined;
 
-  @TypeGraphQL.Field(_type => FloatNullableWithAggregatesFilter, {
-    nullable: true
+  @TypeGraphQL.Field((_type) => FloatNullableWithAggregatesFilter, {
+    nullable: true,
   })
   lat?: FloatNullableWithAggregatesFilter | undefined;
 
-  @TypeGraphQL.Field(_type => FloatNullableWithAggregatesFilter, {
-    nullable: true
+  @TypeGraphQL.Field((_type) => FloatNullableWithAggregatesFilter, {
+    nullable: true,
   })
   long?: FloatNullableWithAggregatesFilter | undefined;
+
+  @TypeGraphQL.Field((_type) => BigIntNullableWithAggregatesFilter, {
+    nullable: true,
+  })
+  year?: BigIntNullableWithAggregatesFilter | undefined;
 }

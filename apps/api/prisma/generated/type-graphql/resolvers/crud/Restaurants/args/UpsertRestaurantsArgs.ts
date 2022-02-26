@@ -6,18 +6,18 @@ import { RestaurantsWhereUniqueInput } from "../../../inputs/RestaurantsWhereUni
 
 @TypeGraphQL.ArgsType()
 export class UpsertRestaurantsArgs {
-  @TypeGraphQL.Field(_type => RestaurantsWhereUniqueInput, {
-    nullable: false
+  @TypeGraphQL.Field((_type) => RestaurantsWhereUniqueInput, {
+    nullable: false,
   })
   where!: RestaurantsWhereUniqueInput;
 
-  @TypeGraphQL.Field(_type => RestaurantsCreateInput, {
-    nullable: false
+  @TypeGraphQL.Field((_type) => RestaurantsCreateInput, {
+    nullable: false,
   })
   create!: RestaurantsCreateInput;
 
-  @TypeGraphQL.Field(_type => RestaurantsUpdateInput, {
-    nullable: false
+  @TypeGraphQL.Field((_type) => RestaurantsUpdateInput, {
+    nullable: false,
   })
   update!: RestaurantsUpdateInput;
 }

@@ -6,28 +6,28 @@ import { RestaurantsWhereUniqueInput } from "../../../inputs/RestaurantsWhereUni
 
 @TypeGraphQL.ArgsType()
 export class AggregateRestaurantsArgs {
-  @TypeGraphQL.Field(_type => RestaurantsWhereInput, {
-    nullable: true
+  @TypeGraphQL.Field((_type) => RestaurantsWhereInput, {
+    nullable: true,
   })
   where?: RestaurantsWhereInput | undefined;
 
-  @TypeGraphQL.Field(_type => [RestaurantsOrderByWithRelationInput], {
-    nullable: true
+  @TypeGraphQL.Field((_type) => [RestaurantsOrderByWithRelationInput], {
+    nullable: true,
   })
   orderBy?: RestaurantsOrderByWithRelationInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => RestaurantsWhereUniqueInput, {
-    nullable: true
+  @TypeGraphQL.Field((_type) => RestaurantsWhereUniqueInput, {
+    nullable: true,
   })
   cursor?: RestaurantsWhereUniqueInput | undefined;
 
-  @TypeGraphQL.Field(_type => TypeGraphQL.Int, {
-    nullable: true
+  @TypeGraphQL.Field((_type) => TypeGraphQL.Int, {
+    nullable: true,
   })
   take?: number | undefined;
 
-  @TypeGraphQL.Field(_type => TypeGraphQL.Int, {
-    nullable: true
+  @TypeGraphQL.Field((_type) => TypeGraphQL.Int, {
+    nullable: true,
   })
   skip?: number | undefined;
 }

@@ -5,26 +5,31 @@ import { DecimalJSScalar } from "../../scalars";
 import { SortOrder } from "../../enums/SortOrder";
 
 @TypeGraphQL.InputType("RestaurantsSumOrderByAggregateInput", {
-  isAbstract: true
+  isAbstract: true,
 })
 export class RestaurantsSumOrderByAggregateInput {
-  @TypeGraphQL.Field(_type => SortOrder, {
-    nullable: true
+  @TypeGraphQL.Field((_type) => SortOrder, {
+    nullable: true,
   })
   id?: "asc" | "desc" | undefined;
 
-  @TypeGraphQL.Field(_type => SortOrder, {
-    nullable: true
+  @TypeGraphQL.Field((_type) => SortOrder, {
+    nullable: true,
   })
   rating?: "asc" | "desc" | undefined;
 
-  @TypeGraphQL.Field(_type => SortOrder, {
-    nullable: true
+  @TypeGraphQL.Field((_type) => SortOrder, {
+    nullable: true,
   })
   lat?: "asc" | "desc" | undefined;
 
-  @TypeGraphQL.Field(_type => SortOrder, {
-    nullable: true
+  @TypeGraphQL.Field((_type) => SortOrder, {
+    nullable: true,
   })
   long?: "asc" | "desc" | undefined;
+
+  @TypeGraphQL.Field((_type) => SortOrder, {
+    nullable: true,
+  })
+  year?: "asc" | "desc" | undefined;
 }

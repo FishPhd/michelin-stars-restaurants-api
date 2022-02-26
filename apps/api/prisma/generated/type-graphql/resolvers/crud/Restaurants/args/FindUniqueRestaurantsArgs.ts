@@ -4,8 +4,8 @@ import { RestaurantsWhereUniqueInput } from "../../../inputs/RestaurantsWhereUni
 
 @TypeGraphQL.ArgsType()
 export class FindUniqueRestaurantsArgs {
-  @TypeGraphQL.Field(_type => RestaurantsWhereUniqueInput, {
-    nullable: false
+  @TypeGraphQL.Field((_type) => RestaurantsWhereUniqueInput, {
+    nullable: false,
   })
   where!: RestaurantsWhereUniqueInput;
 }

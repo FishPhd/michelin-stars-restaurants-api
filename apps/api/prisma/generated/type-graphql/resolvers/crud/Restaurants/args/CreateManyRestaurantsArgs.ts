@@ -4,13 +4,13 @@ import { RestaurantsCreateManyInput } from "../../../inputs/RestaurantsCreateMan
 
 @TypeGraphQL.ArgsType()
 export class CreateManyRestaurantsArgs {
-  @TypeGraphQL.Field(_type => [RestaurantsCreateManyInput], {
-    nullable: false
+  @TypeGraphQL.Field((_type) => [RestaurantsCreateManyInput], {
+    nullable: false,
   })
   data!: RestaurantsCreateManyInput[];
 
-  @TypeGraphQL.Field(_type => Boolean, {
-    nullable: true
+  @TypeGraphQL.Field((_type) => Boolean, {
+    nullable: true,
   })
   skipDuplicates?: boolean | undefined;
 }
