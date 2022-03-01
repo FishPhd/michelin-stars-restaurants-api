@@ -9,8 +9,13 @@ import { client, ssrCache } from "../utils/withUrql";
 import Head from "next/head";
 
 export default function Home() {
-  const [{ data: { restaurants } = { restaurants: [] } }] =
-    useRestaurantsQuery() || [];
+  const [{ data: { restaurants = [] } = { restaurants: [] }, fetching }] =
+    useRestaurantsQuery();
+  let map = <div>loading...</div>;
+
+  if (!fetching) {
+    map = <GoogleMap restaurants={restaurants} />;
+  }
 
   return (
     <>
@@ -18,7 +23,7 @@ export default function Home() {
         <title>Michelin Maps</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <GoogleMap restaurants={restaurants} />
+      {map}
     </>
   );
 }
