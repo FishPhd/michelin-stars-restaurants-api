@@ -7,15 +7,17 @@ import {
 } from "../graphql/generated/graphql";
 import { client, ssrCache } from "../utils/withUrql";
 import Head from "next/head";
+import isFetching from "../utils/isFetching";
+import { Router } from "next/router";
 
 export default function Home() {
-  const [{ data: { restaurants = [] } = { restaurants: [] }, fetching }] =
+  const [loading, setLoading] = React.useState(false);
+  const [{ data: { restaurants = [] } = { restaurants: [] } }] =
     useRestaurantsQuery();
-  let map = <div>loading...</div>;
 
-  if (!fetching) {
-    map = <GoogleMap restaurants={restaurants} />;
-  }
+  React.useEffect(() => {
+    isFetching(setLoading);
+  }, [setLoading]);
 
   return (
     <>
@@ -23,12 +25,16 @@ export default function Home() {
         <title>Michelin Maps</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      {map}
+      {loading ? (
+        <div className="grid place-items-center h-screen">Loading...</div>
+      ) : (
+        <GoogleMap restaurants={restaurants} />
+      )}
     </>
   );
 }
 
-export async function getStaticProps(ctx) {
+export async function getServerSideProps(ctx) {
   await client.query(RestaurantsDocument as DocumentNode).toPromise();
   return { props: { urqlState: ssrCache.extractData() } };
 }
