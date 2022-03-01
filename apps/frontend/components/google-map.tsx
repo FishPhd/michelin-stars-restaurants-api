@@ -52,9 +52,9 @@ export class GoogleMap extends React.Component<MapProps> {
       marker.addListener("click", () => {
         infoWindow.setContent(
           "<div class='infowindow-container'>" +
-            "<img class='pt-2' src='" +
+            "<img class='pt-2 max-w-md' src='" +
             r.img +
-            "?width=200&height=200'></img><div class='inner'><h4 class='text-xl pt-2 font-bold'>" +
+            "'/><div class='inner'><h4 class='text-xl pt-2 font-bold'>" +
             label +
             "</h4><p class='text-xl	text-red-800'>" +
             "&#x273D".repeat(r.rating) +

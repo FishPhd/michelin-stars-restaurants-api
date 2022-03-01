@@ -19,3 +19,7 @@ button:focus {
 div:focus {
   outline: 0;
 }
+
+.gm-style img {
+  max-width: 200px;
+}
