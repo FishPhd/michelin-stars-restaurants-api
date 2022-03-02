@@ -23,6 +23,7 @@ class Postgres:
                 user={user}
                 host={host}
                 password={password}
+                port={port}
                 """)
         except:
             self.conn = None
