@@ -1,13 +1,13 @@
 class Restaurant:
-    def __init__(self, name, rating, guide, img, link, location, cuisine_type,
-                 lat, long, year):
+    def __init__(self, name, rating, guide, img, link, location, cuisine, lat,
+                 long, year):
         self.name = name
         self.rating = rating
         self.guide = guide
         self.img = img
         self.link = link
         self.location = location
-        self.type = cuisine_type
+        self.cuisine = cuisine
         self.lat = lat
         self.long = long
         self.year = year

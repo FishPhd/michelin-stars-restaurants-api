@@ -6,8 +6,8 @@ from bs4 import BeautifulSoup as bs
 
 from restaurant import Restaurant
 
-base_url = 'https://guide.michelin.com/'
-query = 'en/restaurants/3-stars-michelin/2-stars-michelin/1-star-michelin/page/'
+base_url = 'https://guide.michelin.com'
+query = '/en/restaurants/3-stars-michelin/2-stars-michelin/1-star-michelin/page/'
 cards_per_page = 20
 ratings_map = {'o': 3, 'n': 2, 'm': 1}
 
@@ -20,7 +20,7 @@ selectors = {
     'name': '.card__menu-content--title>a',
     'link': '.card__menu-content--title>a',
     'location': '.card__menu-footer--location',
-    'type': '.card__menu-footer--price',
+    'cuisine': '.restaurant-details__heading-price',
     'page_numbers': '.search-results__btn-carousel-wrapper>div>ul>li>a'
 }
 
@@ -77,14 +77,20 @@ class Scraper:
             location = card.select_one(
                 selectors['location']).get_text().strip()
 
-            cuisine_type = card.select_one(
-                selectors['type']).get_text().strip()
+            # Retrieve cuisine's by also scraping restaurant page
+            restaurant_page_content = bs(
+                requests.get(link).content, 'html.parser')
+
+            cuisine = restaurant_page_content.select_one(
+                selectors['cuisine']).get_text().split(u'•')[-1].strip()
+
+            cards = self.content.select(selectors['cards'])
 
             lat = card.attrs["data-lat"]
             long = card.attrs["data-lng"]
 
             cur_restaurant = Restaurant(name, rating, guide, img, link,
-                                        location, cuisine_type, lat, long,
+                                        location, cuisine, lat, long,
                                         self.cur_year)
             self.restaurants.append(cur_restaurant)
 
