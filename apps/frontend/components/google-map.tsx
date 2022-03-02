@@ -1,3 +1,4 @@
+/* global google */
 import MarkerClusterer from "@google/markerclustererplus";
 import React from "react";
 import { Restaurants } from "../graphql/generated/graphql";
