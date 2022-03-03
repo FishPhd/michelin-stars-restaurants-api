@@ -4,7 +4,11 @@ import { GraphQLResolveInfo } from "graphql";
 import { AggregateRestaurantsArgs } from "./args/AggregateRestaurantsArgs";
 import { Restaurants } from "../../../models/Restaurants";
 import { AggregateRestaurants } from "../../outputs/AggregateRestaurants";
-import { transformFields, getPrismaFromContext } from "../../../helpers";
+import {
+  transformFields,
+  getPrismaFromContext,
+  transformCountFieldIntoSelectRelationsCount,
+} from "../../../helpers";
 
 @TypeGraphQL.Resolver((_of) => Restaurants)
 export class AggregateRestaurantsResolver {

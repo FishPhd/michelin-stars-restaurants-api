@@ -1,4 +1,7 @@
 import * as TypeGraphQL from "type-graphql";
+import * as GraphQLScalars from "graphql-scalars";
+import { Prisma } from "@prisma/client";
+import { DecimalJSScalar } from "../../scalars";
 import { NestedStringNullableFilter } from "../inputs/NestedStringNullableFilter";
 import { QueryMode } from "../../enums/QueryMode";
 

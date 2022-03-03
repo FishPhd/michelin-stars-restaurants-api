@@ -1,5 +1,7 @@
 import * as TypeGraphQL from "type-graphql";
 import * as GraphQLScalars from "graphql-scalars";
+import { Prisma } from "@prisma/client";
+import { DecimalJSScalar } from "../../scalars";
 import { NestedBigIntFilter } from "../inputs/NestedBigIntFilter";
 import { NestedBigIntWithAggregatesFilter } from "../inputs/NestedBigIntWithAggregatesFilter";
 import { NestedFloatFilter } from "../inputs/NestedFloatFilter";

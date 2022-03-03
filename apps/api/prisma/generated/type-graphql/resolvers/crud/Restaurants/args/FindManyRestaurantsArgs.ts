@@ -1,4 +1,5 @@
 import * as TypeGraphQL from "type-graphql";
+import * as GraphQLScalars from "graphql-scalars";
 import { RestaurantsOrderByWithRelationInput } from "../../../inputs/RestaurantsOrderByWithRelationInput";
 import { RestaurantsWhereInput } from "../../../inputs/RestaurantsWhereInput";
 import { RestaurantsWhereUniqueInput } from "../../../inputs/RestaurantsWhereUniqueInput";

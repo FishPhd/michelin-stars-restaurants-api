@@ -20,7 +20,7 @@ model restaurants {
   img      String?
   link     String?
   location String?
-  type     String?
+  cuisine  String?
   lat      Float?
   long     Float?
   year     BigInt?
