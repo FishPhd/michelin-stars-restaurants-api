@@ -7,7 +7,6 @@ import { AggregateRestaurants } from "../../outputs/AggregateRestaurants";
 import {
   transformFields,
   getPrismaFromContext,
-  transformCountFieldIntoSelectRelationsCount,
 } from "../../../helpers";
 
 @TypeGraphQL.Resolver((_of) => Restaurants)

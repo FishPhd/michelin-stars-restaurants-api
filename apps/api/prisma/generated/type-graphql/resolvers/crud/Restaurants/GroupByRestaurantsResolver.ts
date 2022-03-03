@@ -7,7 +7,6 @@ import { RestaurantsGroupBy } from "../../outputs/RestaurantsGroupBy";
 import {
   transformFields,
   getPrismaFromContext,
-  transformCountFieldIntoSelectRelationsCount,
 } from "../../../helpers";
 
 @TypeGraphQL.Resolver((_of) => Restaurants)
