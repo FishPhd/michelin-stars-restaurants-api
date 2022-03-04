@@ -9,7 +9,6 @@
     "dev": "tsnd --respawn dist/index.js",
     "migrate": "prisma migrate dev",
     "pull": "prisma db pull",
-    "gen-old": "prisma generate && prettier --write prisma/**/*.ts && eslint . --ext .ts --fix",
     "lint": "eslint . --ext .ts --fix",
     "prettier": "prettier --write prisma/**/*.ts",
     "build": "tsc"
@@ -32,8 +31,7 @@
     "@types/node": "^17.0.19",
     "eslint-plugin-unused-imports": "^2.0.0",
     "ts-node": "^10.5.0",
-    "ts-node-dev": "^1.1.8",
-    "typegraphql-prisma": "^0.19.1"
+    "ts-node-dev": "^1.1.8"
   },
   "engines": {
     "yarn": "1.x"
