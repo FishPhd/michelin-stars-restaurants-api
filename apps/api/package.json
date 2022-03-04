@@ -9,7 +9,7 @@
     "dev": "tsnd --respawn dist/index.js",
     "migrate": "prisma migrate dev",
     "pull": "prisma db pull",
-    "gen": "prisma generate && prettier --write prisma/**/*.ts",
+    "gen": "prisma generate && prettier --write prisma/**/*.ts && eslint . --ext .ts --fix",
     "lint": "eslint . --ext .ts --fix",
     "prettier": "prettier --write prisma/**/*.ts",
     "build": "tsc"
@@ -19,7 +19,7 @@
     "@prisma/client": "^3.10.0",
     "apollo-server": "^3.6.3",
     "class-validator": "^0.13.2",
-    "graphql": "15.7.2",
+    "graphql": "15.3.0",
     "graphql-fields": "^2.0.3",
     "graphql-scalars": "^1.14.1",
     "prisma": "~3.10.0",
@@ -37,5 +37,8 @@
   },
   "engines": {
     "yarn": "1.x"
+  },
+  "resolutions": {
+    "graphql": "^15.3.0"
   }
 }
