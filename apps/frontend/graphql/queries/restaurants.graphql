@@ -1,5 +1,5 @@
 query Restaurants {
-  restaurants: findManyRestaurants {
+  restaurants {
     ...Restaurant
   }
 }
