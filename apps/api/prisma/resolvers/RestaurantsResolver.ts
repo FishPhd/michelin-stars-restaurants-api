@@ -8,7 +8,7 @@ export class RestaurantsResolver {
   @Query(() => [Restaurants], {
     nullable: false,
   })
-  async Restaurants(@Ctx() ctx: Context): Promise<Restaurants[]> {
+  async restaurants(@Ctx() ctx: Context): Promise<Restaurants[]> {
     return getPrismaFromContext(ctx).restaurants.findMany();
   }
 }
