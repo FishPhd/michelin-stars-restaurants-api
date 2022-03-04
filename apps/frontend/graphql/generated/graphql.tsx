@@ -1,4 +1,3 @@
-import { DocumentNode } from "graphql";
 import gql from "graphql-tag";
 import * as Urql from "urql";
 export type Maybe<T> = T | null;
@@ -391,6 +390,7 @@ export enum QueryMode {
 
 export type Restaurants = {
   __typename?: "Restaurants";
+  cuisine?: Maybe<Scalars["String"]>;
   guide?: Maybe<Scalars["String"]>;
   id: Scalars["BigInt"];
   img?: Maybe<Scalars["String"]>;
@@ -400,7 +400,6 @@ export type Restaurants = {
   long?: Maybe<Scalars["Float"]>;
   name?: Maybe<Scalars["String"]>;
   rating?: Maybe<Scalars["BigInt"]>;
-  type?: Maybe<Scalars["String"]>;
   year?: Maybe<Scalars["BigInt"]>;
 };
 
@@ -424,6 +423,7 @@ export type RestaurantsAvgOrderByAggregateInput = {
 export type RestaurantsCountAggregate = {
   __typename?: "RestaurantsCountAggregate";
   _all: Scalars["Int"];
+  cuisine: Scalars["Int"];
   guide: Scalars["Int"];
   id: Scalars["Int"];
   img: Scalars["Int"];
@@ -433,11 +433,11 @@ export type RestaurantsCountAggregate = {
   long: Scalars["Int"];
   name: Scalars["Int"];
   rating: Scalars["Int"];
-  type: Scalars["Int"];
   year: Scalars["Int"];
 };
 
 export type RestaurantsCountOrderByAggregateInput = {
+  cuisine?: InputMaybe<SortOrder>;
   guide?: InputMaybe<SortOrder>;
   id?: InputMaybe<SortOrder>;
   img?: InputMaybe<SortOrder>;
@@ -447,11 +447,11 @@ export type RestaurantsCountOrderByAggregateInput = {
   long?: InputMaybe<SortOrder>;
   name?: InputMaybe<SortOrder>;
   rating?: InputMaybe<SortOrder>;
-  type?: InputMaybe<SortOrder>;
   year?: InputMaybe<SortOrder>;
 };
 
 export type RestaurantsCreateInput = {
+  cuisine?: InputMaybe<Scalars["String"]>;
   guide?: InputMaybe<Scalars["String"]>;
   id: Scalars["BigInt"];
   img?: InputMaybe<Scalars["String"]>;
@@ -461,11 +461,11 @@ export type RestaurantsCreateInput = {
   long?: InputMaybe<Scalars["Float"]>;
   name?: InputMaybe<Scalars["String"]>;
   rating?: InputMaybe<Scalars["BigInt"]>;
-  type?: InputMaybe<Scalars["String"]>;
   year?: InputMaybe<Scalars["BigInt"]>;
 };
 
 export type RestaurantsCreateManyInput = {
+  cuisine?: InputMaybe<Scalars["String"]>;
   guide?: InputMaybe<Scalars["String"]>;
   id: Scalars["BigInt"];
   img?: InputMaybe<Scalars["String"]>;
@@ -475,7 +475,6 @@ export type RestaurantsCreateManyInput = {
   long?: InputMaybe<Scalars["Float"]>;
   name?: InputMaybe<Scalars["String"]>;
   rating?: InputMaybe<Scalars["BigInt"]>;
-  type?: InputMaybe<Scalars["String"]>;
   year?: InputMaybe<Scalars["BigInt"]>;
 };
 
@@ -486,6 +485,7 @@ export type RestaurantsGroupBy = {
   _max?: Maybe<RestaurantsMaxAggregate>;
   _min?: Maybe<RestaurantsMinAggregate>;
   _sum?: Maybe<RestaurantsSumAggregate>;
+  cuisine?: Maybe<Scalars["String"]>;
   guide?: Maybe<Scalars["String"]>;
   id: Scalars["BigInt"];
   img?: Maybe<Scalars["String"]>;
@@ -495,12 +495,12 @@ export type RestaurantsGroupBy = {
   long?: Maybe<Scalars["Float"]>;
   name?: Maybe<Scalars["String"]>;
   rating?: Maybe<Scalars["BigInt"]>;
-  type?: Maybe<Scalars["String"]>;
   year?: Maybe<Scalars["BigInt"]>;
 };
 
 export type RestaurantsMaxAggregate = {
   __typename?: "RestaurantsMaxAggregate";
+  cuisine?: Maybe<Scalars["String"]>;
   guide?: Maybe<Scalars["String"]>;
   id?: Maybe<Scalars["BigInt"]>;
   img?: Maybe<Scalars["String"]>;
@@ -510,11 +510,11 @@ export type RestaurantsMaxAggregate = {
   long?: Maybe<Scalars["Float"]>;
   name?: Maybe<Scalars["String"]>;
   rating?: Maybe<Scalars["BigInt"]>;
-  type?: Maybe<Scalars["String"]>;
   year?: Maybe<Scalars["BigInt"]>;
 };
 
 export type RestaurantsMaxOrderByAggregateInput = {
+  cuisine?: InputMaybe<SortOrder>;
   guide?: InputMaybe<SortOrder>;
   id?: InputMaybe<SortOrder>;
   img?: InputMaybe<SortOrder>;
@@ -524,12 +524,12 @@ export type RestaurantsMaxOrderByAggregateInput = {
   long?: InputMaybe<SortOrder>;
   name?: InputMaybe<SortOrder>;
   rating?: InputMaybe<SortOrder>;
-  type?: InputMaybe<SortOrder>;
   year?: InputMaybe<SortOrder>;
 };
 
 export type RestaurantsMinAggregate = {
   __typename?: "RestaurantsMinAggregate";
+  cuisine?: Maybe<Scalars["String"]>;
   guide?: Maybe<Scalars["String"]>;
   id?: Maybe<Scalars["BigInt"]>;
   img?: Maybe<Scalars["String"]>;
@@ -539,11 +539,11 @@ export type RestaurantsMinAggregate = {
   long?: Maybe<Scalars["Float"]>;
   name?: Maybe<Scalars["String"]>;
   rating?: Maybe<Scalars["BigInt"]>;
-  type?: Maybe<Scalars["String"]>;
   year?: Maybe<Scalars["BigInt"]>;
 };
 
 export type RestaurantsMinOrderByAggregateInput = {
+  cuisine?: InputMaybe<SortOrder>;
   guide?: InputMaybe<SortOrder>;
   id?: InputMaybe<SortOrder>;
   img?: InputMaybe<SortOrder>;
@@ -553,7 +553,6 @@ export type RestaurantsMinOrderByAggregateInput = {
   long?: InputMaybe<SortOrder>;
   name?: InputMaybe<SortOrder>;
   rating?: InputMaybe<SortOrder>;
-  type?: InputMaybe<SortOrder>;
   year?: InputMaybe<SortOrder>;
 };
 
@@ -563,6 +562,7 @@ export type RestaurantsOrderByWithAggregationInput = {
   _max?: InputMaybe<RestaurantsMaxOrderByAggregateInput>;
   _min?: InputMaybe<RestaurantsMinOrderByAggregateInput>;
   _sum?: InputMaybe<RestaurantsSumOrderByAggregateInput>;
+  cuisine?: InputMaybe<SortOrder>;
   guide?: InputMaybe<SortOrder>;
   id?: InputMaybe<SortOrder>;
   img?: InputMaybe<SortOrder>;
@@ -572,11 +572,11 @@ export type RestaurantsOrderByWithAggregationInput = {
   long?: InputMaybe<SortOrder>;
   name?: InputMaybe<SortOrder>;
   rating?: InputMaybe<SortOrder>;
-  type?: InputMaybe<SortOrder>;
   year?: InputMaybe<SortOrder>;
 };
 
 export type RestaurantsOrderByWithRelationInput = {
+  cuisine?: InputMaybe<SortOrder>;
   guide?: InputMaybe<SortOrder>;
   id?: InputMaybe<SortOrder>;
   img?: InputMaybe<SortOrder>;
@@ -586,11 +586,11 @@ export type RestaurantsOrderByWithRelationInput = {
   long?: InputMaybe<SortOrder>;
   name?: InputMaybe<SortOrder>;
   rating?: InputMaybe<SortOrder>;
-  type?: InputMaybe<SortOrder>;
   year?: InputMaybe<SortOrder>;
 };
 
 export enum RestaurantsScalarFieldEnum {
+  Cuisine = "cuisine",
   Guide = "guide",
   Id = "id",
   Img = "img",
@@ -600,7 +600,6 @@ export enum RestaurantsScalarFieldEnum {
   Long = "long",
   Name = "name",
   Rating = "rating",
-  Type = "type",
   Year = "year",
 }
 
@@ -608,6 +607,7 @@ export type RestaurantsScalarWhereWithAggregatesInput = {
   AND?: InputMaybe<Array<RestaurantsScalarWhereWithAggregatesInput>>;
   NOT?: InputMaybe<Array<RestaurantsScalarWhereWithAggregatesInput>>;
   OR?: InputMaybe<Array<RestaurantsScalarWhereWithAggregatesInput>>;
+  cuisine?: InputMaybe<StringNullableWithAggregatesFilter>;
   guide?: InputMaybe<StringNullableWithAggregatesFilter>;
   id?: InputMaybe<BigIntWithAggregatesFilter>;
   img?: InputMaybe<StringNullableWithAggregatesFilter>;
@@ -617,7 +617,6 @@ export type RestaurantsScalarWhereWithAggregatesInput = {
   long?: InputMaybe<FloatNullableWithAggregatesFilter>;
   name?: InputMaybe<StringNullableWithAggregatesFilter>;
   rating?: InputMaybe<BigIntNullableWithAggregatesFilter>;
-  type?: InputMaybe<StringNullableWithAggregatesFilter>;
   year?: InputMaybe<BigIntNullableWithAggregatesFilter>;
 };
 
@@ -639,6 +638,7 @@ export type RestaurantsSumOrderByAggregateInput = {
 };
 
 export type RestaurantsUpdateInput = {
+  cuisine?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   guide?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   id?: InputMaybe<BigIntFieldUpdateOperationsInput>;
   img?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
@@ -648,11 +648,11 @@ export type RestaurantsUpdateInput = {
   long?: InputMaybe<NullableFloatFieldUpdateOperationsInput>;
   name?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   rating?: InputMaybe<NullableBigIntFieldUpdateOperationsInput>;
-  type?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   year?: InputMaybe<NullableBigIntFieldUpdateOperationsInput>;
 };
 
 export type RestaurantsUpdateManyMutationInput = {
+  cuisine?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   guide?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   id?: InputMaybe<BigIntFieldUpdateOperationsInput>;
   img?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
@@ -662,7 +662,6 @@ export type RestaurantsUpdateManyMutationInput = {
   long?: InputMaybe<NullableFloatFieldUpdateOperationsInput>;
   name?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   rating?: InputMaybe<NullableBigIntFieldUpdateOperationsInput>;
-  type?: InputMaybe<NullableStringFieldUpdateOperationsInput>;
   year?: InputMaybe<NullableBigIntFieldUpdateOperationsInput>;
 };
 
@@ -670,6 +669,7 @@ export type RestaurantsWhereInput = {
   AND?: InputMaybe<Array<RestaurantsWhereInput>>;
   NOT?: InputMaybe<Array<RestaurantsWhereInput>>;
   OR?: InputMaybe<Array<RestaurantsWhereInput>>;
+  cuisine?: InputMaybe<StringNullableFilter>;
   guide?: InputMaybe<StringNullableFilter>;
   id?: InputMaybe<BigIntFilter>;
   img?: InputMaybe<StringNullableFilter>;
@@ -679,7 +679,6 @@ export type RestaurantsWhereInput = {
   long?: InputMaybe<FloatNullableFilter>;
   name?: InputMaybe<StringNullableFilter>;
   rating?: InputMaybe<BigIntNullableFilter>;
-  type?: InputMaybe<StringNullableFilter>;
   year?: InputMaybe<BigIntNullableFilter>;
 };
 
@@ -734,9 +733,10 @@ export type RestaurantFragment = {
   img?: string | null;
   link?: string | null;
   location?: string | null;
-  type?: string | null;
+  cuisine?: string | null;
   lat?: number | null;
   long?: number | null;
+  year?: any | null;
 };
 
 export type RestaurantsQueryVariables = Exact<{ [key: string]: never }>;
@@ -752,9 +752,10 @@ export type RestaurantsQuery = {
     img?: string | null;
     link?: string | null;
     location?: string | null;
-    type?: string | null;
+    cuisine?: string | null;
     lat?: number | null;
     long?: number | null;
+    year?: any | null;
   }>;
 };
 
@@ -767,9 +768,10 @@ export const RestaurantFragmentDoc = gql`
     img
     link
     location
-    type
+    cuisine
     lat
     long
+    year
   }
 `;
 export const RestaurantsDocument = gql`
@@ -785,7 +787,7 @@ export function useRestaurantsQuery(
   options?: Omit<Urql.UseQueryArgs<RestaurantsQueryVariables>, "query">
 ) {
   return Urql.useQuery<RestaurantsQuery>({
-    query: RestaurantsDocument as DocumentNode,
+    query: RestaurantsDocument,
     ...options,
   });
 }

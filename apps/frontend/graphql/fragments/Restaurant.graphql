@@ -6,7 +6,7 @@ fragment Restaurant on Restaurants {
   img
   link
   location
-  type
+  cuisine
   lat
   long
   year
