@@ -20,10 +20,10 @@ model restaurants {
   img      String?
   link     String?
   location String?
-  cuisine  String?
   lat      Float?
   long     Float?
   year     BigInt?
+  cuisine  String?
 
   @@index([id], map: "ix_restaurants_id")
 }

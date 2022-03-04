@@ -4,23 +4,17 @@ import { GraphQLResolveInfo } from "graphql";
 import { DeleteManyRestaurantsArgs } from "./args/DeleteManyRestaurantsArgs";
 import { Restaurants } from "../../../models/Restaurants";
 import { AffectedRowsOutput } from "../../outputs/AffectedRowsOutput";
-import {
-  transformFields,
-  getPrismaFromContext,
-  transformCountFieldIntoSelectRelationsCount,
-} from "../../../helpers";
+import { transformFields, getPrismaFromContext, transformCountFieldIntoSelectRelationsCount } from "../../../helpers";
 
-@TypeGraphQL.Resolver((_of) => Restaurants)
+@TypeGraphQL.Resolver(_of => Restaurants)
 export class DeleteManyRestaurantsResolver {
-  @TypeGraphQL.Mutation((_returns) => AffectedRowsOutput, {
-    nullable: false,
+  @TypeGraphQL.Mutation(_returns => AffectedRowsOutput, {
+    nullable: false
   })
-  async deleteManyRestaurants(
-    @TypeGraphQL.Ctx() ctx: any,
-    @TypeGraphQL.Info() info: GraphQLResolveInfo,
-    @TypeGraphQL.Args() args: DeleteManyRestaurantsArgs
-  ): Promise<AffectedRowsOutput> {
-    const { _count } = transformFields(graphqlFields(info as any));
+  async deleteManyRestaurants(@TypeGraphQL.Ctx() ctx: any, @TypeGraphQL.Info() info: GraphQLResolveInfo, @TypeGraphQL.Args() args: DeleteManyRestaurantsArgs): Promise<AffectedRowsOutput> {
+    const { _count } = transformFields(
+      graphqlFields(info as any)
+    );
     return getPrismaFromContext(ctx).restaurants.deleteMany({
       ...args,
       ...(_count && transformCountFieldIntoSelectRelationsCount(_count)),
