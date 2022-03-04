@@ -7,10 +7,10 @@ CREATE TABLE "restaurants" (
     "img" TEXT,
     "link" TEXT,
     "location" TEXT,
-    "type" TEXT,
     "lat" DOUBLE PRECISION,
     "long" DOUBLE PRECISION,
     "year" BIGINT,
+    "cuisine" TEXT,
 
     CONSTRAINT "restaurants_pkey" PRIMARY KEY ("id")
 );
