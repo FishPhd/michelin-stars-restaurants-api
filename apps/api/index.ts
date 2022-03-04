@@ -2,12 +2,12 @@ import { ApolloServer } from "apollo-server";
 import { PrismaClient } from "@prisma/client";
 import "reflect-metadata";
 import { buildSchemaSync } from "type-graphql";
-import { resolvers } from "./prisma/generated/type-graphql/";
+import { RestaurantsResolver } from "./prisma/resolvers/RestaurantsResolver";
 
 const PORT = process.env.PORT || 4000;
 
 const schema = buildSchemaSync({
-  resolvers,
+  resolvers: [RestaurantsResolver],
   validate: false,
 });
 
