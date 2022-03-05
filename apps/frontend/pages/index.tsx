@@ -12,8 +12,7 @@ import { Router } from "next/router";
 
 export default function Home() {
   const [loading, setLoading] = React.useState(false);
-  const [{ data: { restaurants = [] } = { restaurants: [] } }] =
-    useRestaurantsQuery();
+  const [{ data }] = useRestaurantsQuery();
 
   React.useEffect(() => {
     isFetching(setLoading);
@@ -28,7 +27,7 @@ export default function Home() {
       {loading ? (
         <div className="grid place-items-center h-screen">Loading...</div>
       ) : (
-        <GoogleMap restaurants={restaurants} />
+        <GoogleMap restaurants={data?.restaurants} />
       )}
     </>
   );
