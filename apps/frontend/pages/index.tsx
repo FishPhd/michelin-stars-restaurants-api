@@ -27,7 +27,7 @@ export default function Home() {
       {loading ? (
         <div className="grid place-items-center h-screen">Loading...</div>
       ) : (
-        <GoogleMap restaurants={data?.restaurants} />
+        <GoogleMap restaurants={data?.restaurants ? data?.restaurants : []} />
       )}
     </>
   );
