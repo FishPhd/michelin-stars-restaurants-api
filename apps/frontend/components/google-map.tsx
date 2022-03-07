@@ -55,30 +55,16 @@ export class GoogleMap extends React.Component<MapProps> {
     }
 
     const markers = this.props.restaurants.map((r) => {
-      const stars = "&#x273D".repeat(r.rating);
       const marker = new google.maps.Marker({
         position: { lat: r.lat, lng: r.long },
       });
 
       marker.addListener("click", () => {
-        infoWindow.setContent(
-          `
-            <div class='infowindow-container'> <img class='pt-2 max-w-md' src='${r.img}'/> 
-              <div class='inner'><h4 class='text-xl pt-2 font-bold'>
-                <a class='outline-0 hover:text-red-700' href='${r.link}'>
-                    ${r.name}
-                  </h4>
-                </a>
+        let infoWindowContent = reactElementToJSXString(
+          infoWindowHTML(r)
+        ).replaceAll("className", "class");
 
-                <p class='text-lg 	text-red-800'>
-                  ${stars}
-                </p>
-                <p>${r.cuisine} </p>
-                <p>${r.location} </p>
-              </div>
-            </div>
-          `
-        );
+        infoWindow.setContent(infoWindowContent);
         infoWindow.open(this.map, marker);
       });
 
