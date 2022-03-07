@@ -10,6 +10,7 @@ export default function infoWindow(restaurant: Restaurants) {
         className="pt-4 w-40 h-40 object-cover"
         src={restaurant.img}
         alt={restaurant.name + " Image"}
+        unoptimized={true}
       />
       <div className="inner">
         <h4 className="text-xl pt-2 font-bold">
