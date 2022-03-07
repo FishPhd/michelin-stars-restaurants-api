@@ -1,7 +1,9 @@
 /* global google */
-import MarkerClusterer from "@google/markerclustererplus";
+import MarkerClusterer from "@googlemaps/markerclustererplus";
 import React from "react";
+import reactElementToJSXString from "react-element-to-jsx-string";
 import { Restaurants } from "../graphql/generated/graphql";
+import infoWindowHTML from "../utils/html/infoWindowHTML";
 const styles = require("../styles/google-maps.json");
 
 interface MapProps {

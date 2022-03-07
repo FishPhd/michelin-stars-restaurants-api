@@ -543,10 +543,10 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@google/markerclustererplus@^5.1.3":
-  version "5.1.3"
-  resolved "https://registry.yarnpkg.com/@google/markerclustererplus/-/markerclustererplus-5.1.3.tgz#dd7ddbb2a17c977e0b0252c3d8e61fcf502b1bf2"
-  integrity sha512-2wQGO6GGbKPC2tNmTz8ei1zBa64zV3QBBvgLHiPvYqUA63230qNqfQpN+nzsrl1RM40NJtty4Y1CEQKxq6MBGg==
+"@googlemaps/markerclustererplus@^1.2.10":
+  version "1.2.10"
+  resolved "https://registry.yarnpkg.com/@googlemaps/markerclustererplus/-/markerclustererplus-1.2.10.tgz#e1a97ea7ae137e00d633367be1d49f0a008fa8b3"
+  integrity sha512-HY4ev+D3kO1+9oQjtKTojxVtJIS/kSWJfry6cpKoXC97kBQc5Vguqu5x6pLnh+70N0Au+16Yl7iu4LZaIOTstw==
 
 "@graphql-codegen/cli@^2.6.2":
   version "2.6.2"
