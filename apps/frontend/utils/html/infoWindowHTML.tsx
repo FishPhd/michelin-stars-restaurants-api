@@ -7,7 +7,7 @@ export default function infoWindow(restaurant: Restaurants) {
   return (
     <div className="infowindow-container">
       <img
-        // className="pt-4 w-40 h-40 object-cover"
+        className="pt-4 w-40 h-40 object-cover"
         src={restaurant.img}
         alt={restaurant.name + " Image"}
       />
