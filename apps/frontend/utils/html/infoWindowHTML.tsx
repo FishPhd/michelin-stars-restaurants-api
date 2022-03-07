@@ -4,12 +4,11 @@ import { Restaurants } from "../../graphql/generated/graphql";
 export default function infoWindow(restaurant: Restaurants) {
   const stars = "&#x273D".repeat(restaurant.rating);
   const cuisines = restaurant.cuisine.split(", ");
-  const img_without_loader = "https://" + restaurant.img.split("/v7/")[1];
   return (
     <div className="infowindow-container">
       <Image
         className="pt-4 w-40 h-40 object-cover"
-        src={img_without_loader}
+        src={restaurant.img}
         alt={restaurant.name + " Image"}
       />
       <div className="inner">
