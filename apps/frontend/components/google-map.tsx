@@ -21,8 +21,17 @@ export class GoogleMap extends React.Component<MapProps> {
   };
 
   componentDidMount() {
-    document.body.classList.add("is-map");
-    this.handleAttachGoogleMap();
+    const googleScript = document.getElementById('google-map-script')
+
+    if (window.google) {
+      document.body.classList.add("is-map");
+      this.handleAttachGoogleMap();
+    }
+
+    googleScript.addEventListener('load', () => {
+      document.body.classList.add("is-map");
+      this.handleAttachGoogleMap();
+    })
   }
 
   componentWillUnmount() {
