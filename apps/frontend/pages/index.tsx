@@ -18,17 +18,18 @@ export default function Home() {
     isFetching(setLoading);
   }, [setLoading]);
 
+  if (loading) 
+  {
+    return <div className="grid place-items-center h-screen">Loading...</div>
+  }
+
   return (
     <>
       <Head>
         <title>Michelin Maps</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      {loading ? (
-        <div className="grid place-items-center h-screen">Loading...</div>
-      ) : (
         <GoogleMap restaurants={data?.restaurants ? data?.restaurants : []} />
-      )}
     </>
   );
 }
