@@ -50,11 +50,7 @@ export class GoogleMap extends React.Component<MapProps> {
       disableAutoPan: false,
     });
 
-    if (this.props.restaurants == undefined) {
-      return;
-    }
-
-    const markers = this.props.restaurants.map((r) => {
+    const markers = this.props.restaurants?.map((r) => {
       const marker = new google.maps.Marker({
         position: { lat: r.lat, lng: r.long },
       });
