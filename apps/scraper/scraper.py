@@ -8,7 +8,6 @@ from restaurant import Restaurant
 
 base_url = 'https://guide.michelin.com'
 query = '/en/restaurants/3-stars-michelin/2-stars-michelin/1-star-michelin/page/'
-cards_per_page = 20
 ratings_map = {'o': 3, 'n': 2, 'm': 1}
 
 # Class names for scraping
