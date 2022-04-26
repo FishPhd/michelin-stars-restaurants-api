@@ -2,9 +2,8 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: [
-      "axwwgrkdco.cloudimg.io"
-    ],
+    loader: "custom",
+    path: "https://axwwgrkdco.cloudimg.io",
   },
 };
 
