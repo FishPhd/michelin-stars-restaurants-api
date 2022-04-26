@@ -6,7 +6,8 @@ const nextConfig = {
       "mtp-cf-images.s3-eu-west-1.amazonaws.com",
       "mitp-p-001-delivery.sitecorecontenthub.cloud",
       "axwwgrkdco.cloudimg.io",
-      "mtp-cf-images.s3-eu-west-1.amazonaws.com"
+      "cloudimg.io",
+      "axwwgrkdco.cloudimg.io/v7/mtp-cf-images.s3-eu-west-1.amazonaws.com"
     ],
   },
 };
