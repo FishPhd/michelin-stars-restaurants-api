@@ -1,24 +1,16 @@
-import Image from "next/image";
 import { Restaurants } from "../../graphql/generated/graphql";
-import getConfig from 'next/config'
-
-const myLoader = ({ src }) => {
-  return `https://axwwgrkdco.cloudimg.io/${src}`
-}
 
 export default function infoWindow(restaurant: Restaurants) {
   const stars = "&#x273D".repeat(restaurant.rating);
   const cuisines = restaurant.cuisine.split(", ");
-  const image_url = restaurant.img.split('cloudimg.io')
   
   return (
     <div className="infowindow-container max-w-[200px]" >
-      <Image
-        loader={myLoader}
+      <img
         className="pt-4 w-40 h-40 object-cover mx-auto"
         width={40}
         height={40}
-        src={image_url[1]}
+        src={restaurant.img}
         alt={restaurant.name + " Image"}
       />
       <div className="inner">
