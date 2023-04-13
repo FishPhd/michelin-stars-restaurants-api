@@ -34,9 +34,9 @@ def upload_to_postgres(file):
 
 if __name__ == "__main__":
     # If output file is not found then refresh data
-    if glob('./output/*.csv'):
-        print("Output found will not refresh data...")
-    else:
-        print("Output not found refreshing data...")
-        data_file = scrape_website()
-        upload_to_postgres(data_file)
+    # if glob('./output/*.csv'):
+    #     print("Output found will not refresh data...")
+    # else:
+    #     print("Output not found refreshing data...")
+    #     data_file = scrape_website()
+    upload_to_postgres("./output/restaurants1658265034.csv")
