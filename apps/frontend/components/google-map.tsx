@@ -1,8 +1,8 @@
 "use client";
 /* global google */
-import MarkerClusterer from "@googlemaps/markerclustererplus";
+import { MarkerClusterer } from '@googlemaps/markerclusterer';
 import React from "react";
-import reactElementToJSXString from "react-element-to-jsx-string";
+import { renderToString } from 'react-dom/server';
 import infoWindowHTML from "../utils/html/infoWindowHTML";
 const styles = require("../styles/google-maps.json");
 
@@ -21,14 +21,8 @@ export class GoogleMap extends React.Component<MapProps> {
   };
 
   componentDidMount() {
-    // if (window.google) {
     document.body.classList.add("is-map");
     this.handleAttachGoogleMap();
-    // } else {
-    //   console.error("Google Maps script not found");
-    //   // Optionally, you could inject the script here if it's missing
-    //   this.loadGoogleMapsScript();
-    // }
   }
 
   componentWillUnmount() {
@@ -70,26 +64,28 @@ export class GoogleMap extends React.Component<MapProps> {
     });
 
     const markers = this.props.restaurants?.map((r) => {
+
+      if (r.name === "Mélisse") {
+        console.log(r);
+      }
       const marker = new google.maps.Marker({
         position: { lat: r.lat, lng: r.long },
       });
 
       marker.addListener("click", () => {
-        let infoWindowContent = reactElementToJSXString(
-          infoWindowHTML(r)
-        ).replaceAll("className", "class");
-
+        const infoWindowContent = renderToString(infoWindowHTML(r));
         infoWindow.setContent(infoWindowContent);
         infoWindow.open(this.map, marker);
       });
 
       return marker;
     });
-    this.clusterer = new MarkerClusterer(this.map, [], {
-      gridSize: 30,
-      minimumClusterSize: 4,
-      imagePath:
-        "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m",
+    this.clusterer = new MarkerClusterer({
+      map: this.map,
+      markers: [],
+      algorithmOptions: {
+        maxZoom: 15
+      },
     });
 
     this.clusterer.addMarkers(

@@ -1,11 +1,17 @@
 import { Suspense } from "react";
 import { MapClient } from "../components/map-client";
-import { sql } from "@vercel/postgres";
+import { sql, createClient } from "@vercel/postgres";
 
 const getRestaurants = async () => {
   "use cache";
-  const { rows } = await sql`SELECT * from restaurants`;
-  return rows;
+  const client = createClient();
+  await client.connect();
+  try {
+    const { rows } = await client.query('SELECT * from restaurants');
+    return rows;
+  } finally {
+    await client.end();
+  }
 };
 
 export default async function Home() {

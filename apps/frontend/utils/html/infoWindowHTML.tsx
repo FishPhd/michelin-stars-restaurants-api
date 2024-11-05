@@ -1,10 +1,12 @@
+import Image from "next/image";
+
 export default function infoWindow(restaurant: any) {
-  const stars = "&#x273D".repeat(restaurant.rating);
+  const stars = "✽".repeat(restaurant.rating);
   const cuisines = restaurant.cuisine.split(", ");
 
   return (
     <div className="infowindow-container max-w-[200px]">
-      <img
+      <Image
         className="pt-4 w-40 h-40 object-cover mx-auto"
         width={40}
         height={40}
