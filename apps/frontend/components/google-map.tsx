@@ -64,10 +64,6 @@ export class GoogleMap extends React.Component<MapProps> {
     });
 
     const markers = this.props.restaurants?.map((r) => {
-
-      if (r.name === "Mélisse") {
-        console.log(r);
-      }
       const marker = new google.maps.Marker({
         position: { lat: r.lat, lng: r.long },
       });

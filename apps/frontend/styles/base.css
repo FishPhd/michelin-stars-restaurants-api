@@ -10,6 +10,10 @@
   width: 100% !important;
 }
 
+.gm-style {
+  background-color: #000000 !important;
+}
+
 .gm-style-iw,
 button:focus {
   outline: 0;
