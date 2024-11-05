@@ -1,5 +1,0 @@
-query Restaurants {
-  restaurants {
-    ...Restaurant
-  }
-}

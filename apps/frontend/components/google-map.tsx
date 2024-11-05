@@ -1,13 +1,13 @@
+"use client";
 /* global google */
 import MarkerClusterer from "@googlemaps/markerclustererplus";
 import React from "react";
 import reactElementToJSXString from "react-element-to-jsx-string";
-import { Restaurants } from "../graphql/generated/graphql";
 import infoWindowHTML from "../utils/html/infoWindowHTML";
 const styles = require("../styles/google-maps.json");
 
 interface MapProps {
-  restaurants: Restaurants[];
+  restaurants: any[];
 }
 
 export class GoogleMap extends React.Component<MapProps> {
@@ -21,21 +21,31 @@ export class GoogleMap extends React.Component<MapProps> {
   };
 
   componentDidMount() {
-    const googleScript = document.getElementById('google-map-script')
-
-    if (window.google) {
-      document.body.classList.add("is-map");
-      this.handleAttachGoogleMap();
-    }
-
-    googleScript.addEventListener('load', () => {
-      document.body.classList.add("is-map");
-      this.handleAttachGoogleMap();
-    })
+    // if (window.google) {
+    document.body.classList.add("is-map");
+    this.handleAttachGoogleMap();
+    // } else {
+    //   console.error("Google Maps script not found");
+    //   // Optionally, you could inject the script here if it's missing
+    //   this.loadGoogleMapsScript();
+    // }
   }
 
   componentWillUnmount() {
     document.body.classList.remove("is-map");
+  }
+
+  loadGoogleMapsScript() {
+    const script = document.createElement("script");
+    script.id = "google-maps-script";
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}&libraries=places`;
+    script.async = true;
+    script.defer = true;
+    script.addEventListener("load", () => {
+      document.body.classList.add("is-map");
+      this.handleAttachGoogleMap();
+    });
+    document.head.appendChild(script);
   }
 
   handleAttachGoogleMap() {
