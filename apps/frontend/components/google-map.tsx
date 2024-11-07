@@ -3,7 +3,7 @@
 import { MarkerClusterer } from '@googlemaps/markerclusterer';
 import React from "react";
 import { renderToString } from 'react-dom/server';
-import infoWindowHTML from "../utils/html/infoWindowHTML";
+import infoWindowHTML from "./infoWindow";
 const styles = require("../styles/google-maps.json");
 
 interface MapProps {

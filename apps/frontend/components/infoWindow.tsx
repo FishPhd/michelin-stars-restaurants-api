@@ -7,11 +7,13 @@ export default function infoWindow(restaurant: any) {
   return (
     <div className="infowindow-container max-w-[200px]">
       <Image
+        priority={true}
         className="pt-4 w-40 h-40 object-cover mx-auto"
         width={40}
         height={40}
         src={restaurant.img}
         alt={restaurant.name + " Image"}
+        unoptimized={true} // @TODO fix this optimization
       />
       <div className="inner">
         <h4 className="text-xl pt-2 font-bold">
