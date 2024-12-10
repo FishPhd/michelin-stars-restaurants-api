@@ -29,7 +29,7 @@ class Scraper:
         self.restaurants = []
         self.url = base_url + query + '1'
         self.content = bs(requests.get(self.url).content, 'html.parser')
-        self.delay_rate = 0.15
+        self.delay_rate = 0.02
         self.total_pages = self.get_total_pages(self.content)
         self.cur_year = date.today().year
 
